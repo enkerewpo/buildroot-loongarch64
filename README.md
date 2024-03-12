@@ -1,3 +1,9 @@
+wheatfox left a note:
+
+请注意，本git repo没有包含根目录的dl文件夹（里面包括rootfs内程序的源码压缩包，大小为2G，请手动从buildroot-2021.src.b5c2bd4-build.20230718090721.tar.gz中解压得到dl文件夹并放置在本目录）
+
+本代码来自龙芯公司对2K1000板卡的buildroot适配，对与3A5000的适配将会在本仓库进行代码更新，用于loongvisor(hvisor)启动linux虚拟机时挂载一个简单的rootfs
+
 Buildroot is a simple, efficient and easy-to-use tool to generate embedded
 Linux systems through cross-compilation.
 
