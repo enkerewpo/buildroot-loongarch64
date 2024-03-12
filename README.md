@@ -15,9 +15,11 @@ this CLFS's target linux kernel header version is v6.2
 build rootfs for 3A5000 loongvisor:
 
 ```bash
-make loongson3a5000_hvisor_defconfig # my customized config file
+make loongson3a5000_hvisor_defconfig
+
 # you can change the gcc path to your own by entering menuconfig and change toolchain settings
 make menuconfig # this will modified .config file which is the real config to use when running make
+
 make -j8 # build the rootfs
 ```
 
