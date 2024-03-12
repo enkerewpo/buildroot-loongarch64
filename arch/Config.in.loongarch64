@@ -9,7 +9,7 @@ config BR2_GCC_TARGET_ARCH
 	default "loongarch64"	if BR2_loongarch64
 
 config BR2_GCC_TARGET_ABI
-	default "lp64"		if BR2_loongarch64
+	default "lp64d"		if BR2_loongarch64
 
 config BR2_READELF_ARCH_NAME
 	default "LoongArch"

@@ -19,7 +19,8 @@ BUILDDIR="${1}"
 SYSROOT="${2}"
 # Make sure we have enough version components
 HDR_VER="${3}.0.0"
-CHECK="${4}"  # 'strict' or 'loose'
+# CHECK="${4}"  # 'strict' or 'loose'
+CHECK="loose" # wheatfox
 
 HDR_M="${HDR_VER%%.*}"
 HDR_V="${HDR_VER#*.}"

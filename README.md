@@ -4,6 +4,23 @@ wheatfox left a note:
 
 本代码来自龙芯公司对2K1000板卡的buildroot适配，对与3A5000的适配将会在本仓库进行代码更新，用于loongvisor(hvisor)启动linux虚拟机时挂载一个简单的rootfs
 
+GCC: loongarch64-unknown-linux-gnu-gcc. PLEASE USE https://github.com/sunhaiyong1978/CLFS-for-LoongArch/releases/download/8.0/loongarch64-clfs-8.0-cross-tools-gcc-full.tar.xz !
+
+this CLFS's target linux kernel header version is v6.2
+
+build rootfs for 3A5000 loongvisor:
+
+```bash
+make loongson3a5000_hvisor_defconfig # my customized config file
+# you can change the gcc path to your own by entering menuconfig and change toolchain settings
+make menuconfig # this will modified .config file which is the real config to use when running make
+make -j8 # build the rootfs
+```
+
+TIPS:
+
+1. 你可以在output/build/build-time.log中实时查看当前正在编译哪个工具
+
 Buildroot is a simple, efficient and easy-to-use tool to generate embedded
 Linux systems through cross-compilation.
 
