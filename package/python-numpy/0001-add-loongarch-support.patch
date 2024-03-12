@@ -1,0 +1,48 @@
+From 2276209e52b7ca42566d309281ac0ee30ed99753 Mon Sep 17 00:00:00 2001
+From: Xiaochuan Mao <maoxiaochuan@loongson.cn>
+Date: Tue, 16 May 2023 17:41:16 +0800
+Subject: [PATCH] add loongarch support
+
+---
+ numpy/core/include/numpy/npy_cpu.h    | 3 +++
+ numpy/core/include/numpy/npy_endian.h | 3 ++-
+ 2 files changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/numpy/core/include/numpy/npy_cpu.h b/numpy/core/include/numpy/npy_cpu.h
+index 5edd8f4..8b7b59f 100644
+--- a/numpy/core/include/numpy/npy_cpu.h
++++ b/numpy/core/include/numpy/npy_cpu.h
+@@ -18,6 +18,7 @@
+  *              NPY_CPU_ARCEL
+  *              NPY_CPU_ARCEB
+  *              NPY_CPU_RISCV64
++ *              NPY_CPU_LOONGARCH:64
+  */
+ #ifndef _NPY_CPUARCH_H_
+ #define _NPY_CPUARCH_H_
+@@ -102,6 +103,8 @@
+     #define NPY_CPU_ARCEB
+ #elif defined(__riscv) && defined(__riscv_xlen) && __riscv_xlen == 64
+     #define NPY_CPU_RISCV64
++#elif defined(__loongarch__)
++    #define NPY_CPU_LOONGARCH
+ #else
+     #error Unknown CPU, please report this to numpy maintainers with \
+     information about your platform (OS, CPU and compiler)
+diff --git a/numpy/core/include/numpy/npy_endian.h b/numpy/core/include/numpy/npy_endian.h
+index 44cdffd..86c91a6 100644
+--- a/numpy/core/include/numpy/npy_endian.h
++++ b/numpy/core/include/numpy/npy_endian.h
+@@ -48,7 +48,8 @@
+             || defined(NPY_CPU_MIPSEL)        \
+             || defined(NPY_CPU_PPC64LE)       \
+             || defined(NPY_CPU_ARCEL)         \
+-            || defined(NPY_CPU_RISCV64)
++            || defined(NPY_CPU_RISCV64)       \
++            || defined(NPY_CPU_LOONGARCH)
+         #define NPY_BYTE_ORDER NPY_LITTLE_ENDIAN
+     #elif defined(NPY_CPU_PPC)                \
+             || defined(NPY_CPU_SPARC)         \
+-- 
+2.17.1
+

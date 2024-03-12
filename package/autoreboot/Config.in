@@ -1,0 +1,15 @@
+config BR2_PACKAGE_AUTOREBOOT
+	bool "loongson buildroot system autoreboot test"
+	depends on BR2_INIT_SYSTEMD || BR2_INIT_BUSYBOX
+	help
+		this will create a service which name is autoboot.service
+		and create a script in /opt which name is autoreboot.sh
+		so this service will run this script after system reboot.
+		when the script start run it'll make /opt/log_autoreboot for store log 
+		which to record the count of reboot and reboot time. the default reboot
+		times is 1000.
+		if you don't need it you can run this command
+		'systemctl disable autoreboot'
+		if you want to enable this service you can run this command
+		'systemctl enable autoreboot'
+

@@ -1,0 +1,6 @@
+# From https://golang.org/dl/
+sha256  e22dd56aac797e1f877ece46d230dcf6d9174564c9874b4bcb6d453a62837f77  go-release-branch.go1.20.tar.gz
+sha256  6bd438b3b7a26743f7f268cadbfad73b657338ba1a08ffa0487ee0bfdc0477c9  golang-1.20_1.20.2.orig.tar.gz
+sha256  0662ae3813330280d5f1a97a2ee23bbdbe3a5a7cfa6001b24a9873a19a0dc7ec  go1.15.15.src.tar.gz
+sha256  ea417f806daffd29a7469434d7600acabcc5daa90e805160c6a23ba6439060e7  golang-1.15_1.15.6.orig.tar.gz
+sha256	2d36597f7117c38b006835ae7f537487207d8ec407aa9d9980794b2030cbc067  LICENSE

@@ -1,0 +1,18 @@
+#-march=???
+config BR2_ARCH
+	default "loongarch64"	if BR2_loongarch64
+
+config BR2_ENDIAN
+	default "LITTLE"	if BR2_loongarch64
+
+config BR2_GCC_TARGET_ARCH
+	default "loongarch64"	if BR2_loongarch64
+
+config BR2_GCC_TARGET_ABI
+	default "lp64"		if BR2_loongarch64
+
+config BR2_READELF_ARCH_NAME
+	default "LoongArch"
+
+# vim: ft=kconfig
+# -*- mode:kconfig; -*-

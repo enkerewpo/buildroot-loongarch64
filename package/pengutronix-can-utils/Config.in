@@ -1,0 +1,10 @@
+config BR2_PACKAGE_PENGUTRONIX_CAN_UTILS
+	bool "pengutronix can-utils"
+	depends on BR2_USE_MMU # fork()
+	depends on BR2_PACKAGE_LIBSOCKETCAN
+	help
+	  SocketCAN is a set of open source CAN drivers and a
+	  networking stack.
+	  This package based on Pengutronix code.
+
+	  https://github.com/jmore-reachtech/can-utils

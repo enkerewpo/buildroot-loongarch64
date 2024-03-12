@@ -1,0 +1,27 @@
+diff -Nrau electric-fence_2.2.6/Makefile new/Makefile
+--- electric-fence_2.2.6/Makefile	2021-11-13 02:58:14.000000000 +0800
++++ new/Makefile	2022-01-28 14:19:02.860945964 +0800
+@@ -12,8 +12,6 @@
+ MAN_INSTALL_DIR= $(prefix)/share/man/man3
+ 
+ 
+-CC= cc
+-AR= ar
+ INSTALL= install
+ 
+ PACKAGE_SOURCE= README efence.3 Makefile efence.h \
+@@ -22,14 +20,6 @@
+ OBJECTS= efence.o page.o print.o
+ 
+ all:	libefence.a libefence.so.0.0 tstheap eftest
+-	@ echo
+-	@ echo "Testing Electric Fence."
+-	@ echo "After the last test, it should print that the test has PASSED."
+-	./eftest
+-	./tstheap 3072
+-	@ echo
+-	@ echo "Electric Fence confidence test PASSED." 
+-	@ echo
+ 
+ install: libefence.a libefence.3 libefence.so.0.0
+ #	$(INSTALL) -m 755 ef.sh $(BIN_INSTALL_DIR)/ef

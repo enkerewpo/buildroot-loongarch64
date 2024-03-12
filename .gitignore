@@ -1,0 +1,19 @@
+/output
+.lock
+/.auto.deps
+/.config.cmd
+/.config.old
+/..config.tmp
+/.config
+*.depend
+*.o
+/*.patch
+/*.diff
+*.orig
+*.rej
+*~
+*.pyc
+
+# for the dl folder, please manually place it, this folder is too big and only contains code archives
+# the original dl folder is in 2K1000's buildroot-2021.src.b5c2bd4-build.20230718090721.tar.gz
+dl

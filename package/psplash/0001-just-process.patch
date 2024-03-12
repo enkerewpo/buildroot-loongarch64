@@ -1,0 +1,42 @@
+diff -Nprua psplash-bak/psplash.c psplash/psplash.c
+--- psplash-bak/psplash.c	2020-01-22 07:23:44.000000000 +0800
++++ psplash/psplash.c	2022-10-19 10:10:02.708419139 +0800
+@@ -285,6 +285,7 @@ main (int argc, char** argv)
+ 	  goto fb_fail;
+     }
+ 
++#if 0
+   /* Clear the background with #ecece1 */
+   psplash_fb_draw_rect (fb, 0, 0, fb->width, fb->height,
+                         PSPLASH_BACKGROUND_COLOR);
+@@ -303,7 +304,7 @@ main (int argc, char** argv)
+ 			 POKY_IMG_BYTES_PER_PIXEL,
+ 			 POKY_IMG_ROWSTRIDE,
+ 			 POKY_IMG_RLE_PIXEL_DATA);
+-
++#endif
+   /* Draw progress bar border */
+   psplash_fb_draw_image (fb, 
+ 			 (fb->width  - BAR_IMG_WIDTH)/2, 
+diff -Nprua psplash-bak/psplash-colors.h psplash/psplash-colors.h
+--- psplash-bak/psplash-colors.h	2020-01-22 07:23:44.000000000 +0800
++++ psplash/psplash-colors.h	2022-10-19 10:20:00.480854452 +0800
+@@ -12,7 +12,8 @@
+ #define _HAVE_PSPLASH_COLORS_H
+ 
+ /* This is the overall background color */
+-#define PSPLASH_BACKGROUND_COLOR 0xec,0xec,0xe1
++//#define PSPLASH_BACKGROUND_COLOR 0xec,0xec,0xe1
++#define PSPLASH_BACKGROUND_COLOR 0x00,0x00,0x00
+ 
+ /* This is the color of any text output */
+ #define PSPLASH_TEXT_COLOR 0x6d,0x6d,0x70
+@@ -21,6 +22,7 @@
+ #define PSPLASH_BAR_COLOR 0x6d,0x6d,0x70
+ 
+ /* This is the color of the progress bar background */
+-#define PSPLASH_BAR_BACKGROUND_COLOR 0xec,0xec,0xe1
++//#define PSPLASH_BAR_BACKGROUND_COLOR 0xec,0xec,0xe1
++#define PSPLASH_BAR_BACKGROUND_COLOR 0x00,0x00,0x00
+ 
+ #endif

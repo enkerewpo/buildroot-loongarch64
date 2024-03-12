@@ -1,0 +1,42 @@
+config BR2_PACKAGE_LVGL_KIT
+	bool "lvgl demo sofeware"
+	select BR2_PACKAGE_LIBDRM
+	select BR2_PACKAGE_LIBXKBCOMMON
+	help
+		lvgl v8.2 demo sofeware transplant by loongson(GD).
+		just use libxkbcommon and libdrm.
+		work in linux + rootfs(which not X).
+		it just a demo sofeware not any func in this sofeware.
+		you can input lvgl_demo in shell to work it.
+
+config BR2_PACKAGE_TOUCH_SCREEN_MAP_VALUE
+	bool "touch screen xy map logic enable"
+	default n
+	depends on BR2_PACKAGE_LVGL_KIT
+	help
+		if board use screen report the xy value bigger than screen pixel.
+		may be you need check this property.
+		and write down the max report value in BR2_PACKAGE_TOUCH_SCREEN_MAP_VALUE_X(Y).
+		and it will create file which path is /etc/lvgl_config.
+		and file have two property
+		abs_x_calu_max=xxx
+		abs_y_calu_max=xxx
+		xxx from BR2_PACKAGE_TOUCH_SCREEN_MAP_VALUE_X(Y)
+		e.g.
+		abs_x_calu_max=16384
+		abs_y_calu_max=16384
+		if touch screen report value is one to one screen pixel you need check this property.
+
+config BR2_PACKAGE_TOUCH_SCREEN_MAP_VALUE_X
+	string "touch screen x map max value"
+	default "16384"
+	depends on BR2_PACKAGE_TOUCH_SCREEN_MAP_VALUE
+	help
+		this property is touch screen report x max value
+
+config BR2_PACKAGE_TOUCH_SCREEN_MAP_VALUE_Y
+	string "touch screen y map max value"
+	default "16384"
+	depends on BR2_PACKAGE_TOUCH_SCREEN_MAP_VALUE
+	help
+		this property is touch screen report y max value

@@ -1,0 +1,37 @@
+config BR2_PACKAGE_MINIGUI5
+	bool "MINIGUI"
+	depends on BR2_TOOLCHAIN_HAS_THREADS_NPTL
+	depends on BR2_TOOLCHAIN_GCC_AT_LEAST_4_9 # C++11, GCC_BUG_57694
+	depends on !BR2_STATIC_LIBS
+	depends on BR2_mips64el || BR2_mipsel || BR2_loongarch64
+	select BR2_PACKAGE_ICU
+	select BR2_PACKAGE_ZLIB
+	select BR2_PACKAGE_JPEG
+	select BR2_PACKAGE_LIBPNG
+	select BR2_PACKAGE_FREETYPE
+	select BR2_PACKAGE_HARFBUZZ
+	select BR2_PACKAGE_LIBDRM
+	select BR2_PACKAGE_MTDEV
+	select BR2_PACKAGE_KMOD
+	select BR2_PACKAGE_UTIL_LINUX
+	select BR2_PACKAGE_UTIL_LINUX_LIBBLKID
+	select BR2_PACKAGE_HAS_UDEV
+	select BR2_PACKAGE_LIBEVDEV
+	select BR2_PACKAGE_LIBINPUT
+	select BR2_PACKAGE_SQLITE
+	select BR2_PACKAGE_SQLITE_STAT4
+	select BR2_PACKAGE_SQLITE_ENABLE_COLUMN_METADATA
+	select BR2_PACKAGE_SQLITE_ENABLE_FTS3
+	select BR2_PACKAGE_SQLITE_ENABLE_JSON1
+	select BR2_PACKAGE_SQLITE_ENABLE_UNLOCK_NOTIFY
+	select BR2_PACKAGE_SQLITE_SECURE_DELETE
+	select BR2_PACKAGE_SQLITE_NO_SYNC
+	select BR2_PACKAGE_LIBELECTRIC_FENCE
+	select BR2_PACKAGE_PIXMAN
+	help
+	  This option enables the minigui5 framework.
+	  this lib will install whitout compiler
+	  now will support mipsel mips64el and LA64
+	  it will disable chipmunk by buildroot which version is 7.0.2
+	  and use chipmunk 5.3.2 to overlay rootfs
+

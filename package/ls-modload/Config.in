@@ -1,0 +1,22 @@
+config BR2_PACKAGE_LS_MODLOAD
+	bool "loongson buildroot system auto load module"
+	depends on BR2_INIT_BUSYBOX
+	help
+		this will do modprobe in /etc/init.d script
+
+config BR2_PACKAGE_LS_MODLOAD_ALL
+	bool "auto load all modules"
+	depends on BR2_PACKAGE_LS_MODLOAD
+	help
+		this will do modprobe all modules in /lib/modules/`uname -r`/modules.dep,
+		if BR2_PACKAGE_LS_LOADMODULE_ALL not set, modprobe will load modules
+		in /etc/modules
+
+config BR2_PACKAGE_LS_MODLOAD_DELAY
+	bool "modules load delay 5s after boot"
+	depends on BR2_PACKAGE_LS_MODLOAD
+	default n
+	help
+		if run a process after boot and need fast
+		can delay load module
+

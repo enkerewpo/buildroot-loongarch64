@@ -1,0 +1,11 @@
+diff -Nprua icu-bak/source/i18n/double-conversion-utils.h icu/source/i18n/double-conversion-utils.h
+--- icu-bak/source/i18n/double-conversion-utils.h	2020-10-29 05:21:12.000000000 +0800
++++ icu/source/i18n/double-conversion-utils.h	2022-10-18 11:58:36.917691787 +0800
+@@ -128,6 +128,7 @@ int main(int argc, char** argv) {
+     defined(__riscv) || defined(__e2k__) || \
+     defined(__or1k__) || defined(__arc__) || \
+     defined(__microblaze__) || defined(__XTENSA__) || \
++    defined(_LOONGARCH_ARCH) || defined(__loongarch__) || \
+     defined(__EMSCRIPTEN__) || defined(__wasm32__)
+ #define DOUBLE_CONVERSION_CORRECT_DOUBLE_OPERATIONS 1
+ #elif defined(__mc68000__) || \

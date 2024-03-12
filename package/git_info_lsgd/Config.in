@@ -1,0 +1,14 @@
+config BR2_PACKAGE_GIT_INFO_LSGD
+	bool "generate git info in rootfs"
+	default y
+	help
+		this is a function about loongson-gd
+		if select this function
+		it will generate a file which name is git_info_ls
+		this file will record git info last commit
+		content is git commit id time and message
+		and you can use
+		fs_git_info_lsgd
+		command when rootfs run
+		and you can see this file content
+		file save in /etc in rootfs

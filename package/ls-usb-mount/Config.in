@@ -1,0 +1,15 @@
+config BR2_PACKAGE_LS_USB_MOUNT
+	bool "loongson buildroot system auto mount usb in busybox"
+	depends on BR2_INIT_BUSYBOX
+	default n
+	help
+		just for init process as busybox to auto mount busybox
+
+config BR2_PACKAGE_LS_USB_MOUNT_DELAY
+	bool "modules load delay 5s after boot"
+	depends on BR2_PACKAGE_LS_USB_MOUNT
+	default n
+	help
+		if run a process after boot and need fast
+		can delay load module
+

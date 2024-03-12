@@ -1,0 +1,43 @@
+Index: systemd-241/src/basic/architecture.h
+===================================================================
+--- systemd-241.orig/src/basic/architecture.h	2019-02-14 18:11:58.000000000 +0800
++++ systemd-241/src/basic/architecture.h	2020-08-25 09:38:44.202289218 +0800
+@@ -44,6 +44,7 @@
+         ARCHITECTURE_RISCV64,
+         ARCHITECTURE_ARC,
+         ARCHITECTURE_ARC_BE,
++        ARCHITECTURE_LOONGARCH64,
+         _ARCHITECTURE_MAX,
+         _ARCHITECTURE_INVALID = -1
+ };
+@@ -229,6 +230,9 @@
+ #    define native_architecture() ARCHITECTURE_ARC
+ #    define LIB_ARCH_TUPLE "arc-linux"
+ #  endif
++#elif defined(__loongarch64)
++#    define native_architecture() ARCHITECTURE_LOONGARCH64
++#    define LIB_ARCH_TUPLE "loongarch64-linux-gnu"
+ #else
+ #  error "Please register your architecture here!"
+ #endif
+Index: systemd-241/src/basic/architecture.c
+===================================================================
+--- systemd-241.orig/src/basic/architecture.c	2019-02-14 18:11:58.000000000 +0800
++++ systemd-241/src/basic/architecture.c	2020-08-25 09:41:46.528802189 +0800
+@@ -118,6 +118,8 @@
+ #elif defined(__arc__)
+                 { "arc",        ARCHITECTURE_ARC      },
+                 { "arceb",      ARCHITECTURE_ARC_BE   },
++#elif defined(__loongarch64)
++                { "loongarch64", ARCHITECTURE_LOONGARCH64 },
+ #else
+ #error "Please register your architecture here!"
+ #endif
+@@ -173,6 +175,7 @@
+         [ARCHITECTURE_RISCV64] = "riscv64",
+         [ARCHITECTURE_ARC] = "arc",
+         [ARCHITECTURE_ARC_BE] = "arc-be",
++        [ARCHITECTURE_LOONGARCH64] = "loongarch64",
+ };
+ 
+ DEFINE_STRING_TABLE_LOOKUP(architecture, int);

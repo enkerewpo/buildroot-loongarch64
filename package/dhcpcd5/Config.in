@@ -1,0 +1,9 @@
+comment "dhcpcd needs a toolchain w/ headers >= 3.1"
+	depends on !BR2_TOOLCHAIN_HEADERS_AT_LEAST_3_1
+
+config BR2_PACKAGE_DHCPCD5
+	bool "dhcpcd5"
+	depends on BR2_TOOLCHAIN_HEADERS_AT_LEAST_3_1 # sa_family_t in linux/socket.h
+	help
+	  DHCP5 client
+

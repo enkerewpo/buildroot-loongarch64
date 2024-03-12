@@ -1,0 +1,12 @@
+[Unit]
+Description=run a script(default:/root/init_shell/ubi_mount_data.sh) after boot
+After=getty@.service
+
+[Service]
+Type=forking
+ExecStart=/root/init_shell/ubi_mount_data.sh
+TimeoutSec=0
+RemainAfterExit=no
+
+[Install]
+WantedBy=multi-user.target

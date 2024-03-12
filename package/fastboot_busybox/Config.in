@@ -1,0 +1,10 @@
+config BR2_PACKAGE_FASTBOOT_BUSYBOX
+	bool "loongson buildroot system fastboot setup about busybox init process"
+	depends on BR2_INIT_BUSYBOX
+	default n
+	help
+		systemd start need long time but busybox start be faster.
+		but some sofeware need start service which define in /etc/init.d/S* file
+		this service will need some time to boot.
+		so when this option selected,it will move /etc/init.d all S* file
+		to /root/init.d-bak so that delelte this service boot
