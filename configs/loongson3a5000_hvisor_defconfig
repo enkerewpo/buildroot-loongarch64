@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Buildroot -g589d489f-dirty Configuration
+# Buildroot -g340e1026-dirty Configuration
 #
 BR2_HAVE_DOT_CONFIG=y
 BR2_HOST_GCC_AT_LEAST_4_9=y
@@ -367,7 +367,7 @@ BR2_SYSTEM_DEFAULT_PATH="/bin:/sbin:/usr/bin:/usr/sbin"
 #
 # BR2_TARGET_TZ_INFO is not set
 BR2_ROOTFS_USERS_TABLES=""
-BR2_ROOTFS_OVERLAY="board/loongson/ls2k1000la/rootfs_ramdisk_overlay"
+BR2_ROOTFS_OVERLAY="board/loongson/ls3a5000/rootfs_ramdisk_overlay"
 BR2_ROOTFS_POST_BUILD_SCRIPT=""
 BR2_ROOTFS_POST_FAKEROOT_SCRIPT=""
 BR2_ROOTFS_POST_IMAGE_SCRIPT=""
@@ -416,7 +416,25 @@ BR2_PACKAGE_SKELETON_INIT_SYSV=y
 #
 # BR2_PACKAGE_FAAD2 is not set
 BR2_PACKAGE_FFMPEG_ARCH_SUPPORTS=y
-# BR2_PACKAGE_FFMPEG is not set
+BR2_PACKAGE_FFMPEG=y
+# BR2_PACKAGE_FFMPEG_GPL is not set
+# BR2_PACKAGE_FFMPEG_NONFREE is not set
+BR2_PACKAGE_FFMPEG_FFMPEG=y
+# BR2_PACKAGE_FFMPEG_FFPLAY is not set
+# BR2_PACKAGE_FFMPEG_FFPROBE is not set
+# BR2_PACKAGE_FFMPEG_AVRESAMPLE is not set
+# BR2_PACKAGE_FFMPEG_SWSCALE is not set
+BR2_PACKAGE_FFMPEG_ENCODERS="all"
+BR2_PACKAGE_FFMPEG_DECODERS="all"
+BR2_PACKAGE_FFMPEG_MUXERS="all"
+BR2_PACKAGE_FFMPEG_DEMUXERS="all"
+BR2_PACKAGE_FFMPEG_PARSERS="all"
+BR2_PACKAGE_FFMPEG_BSFS="all"
+BR2_PACKAGE_FFMPEG_PROTOCOLS="all"
+BR2_PACKAGE_FFMPEG_FILTERS="all"
+BR2_PACKAGE_FFMPEG_INDEVS=y
+BR2_PACKAGE_FFMPEG_OUTDEVS=y
+BR2_PACKAGE_FFMPEG_EXTRACONF=""
 
 #
 # flac needs a toolchain w/ wchar
@@ -513,7 +531,7 @@ BR2_PACKAGE_PULSEAUDIO_HAS_ATOMIC=y
 # Compressors and decompressors
 #
 # BR2_PACKAGE_BROTLI is not set
-# BR2_PACKAGE_BZIP2 is not set
+BR2_PACKAGE_BZIP2=y
 
 #
 # lrzip needs a toolchain w/ wchar, threads, C++
@@ -534,7 +552,7 @@ BR2_PACKAGE_PULSEAUDIO_HAS_ATOMIC=y
 # unrar needs a toolchain w/ C++, wchar, threads
 #
 # BR2_PACKAGE_XZ is not set
-# BR2_PACKAGE_ZIP is not set
+BR2_PACKAGE_ZIP=y
 # BR2_PACKAGE_ZSTD is not set
 
 #
@@ -575,6 +593,7 @@ BR2_PACKAGE_GDB_ARCH_SUPPORTS=y
 #
 # ktap needs a Linux kernel to be built
 #
+# BR2_PACKAGE_KYUA is not set
 
 #
 # latencytop needs a toolchain w/ wchar, threads
@@ -590,7 +609,7 @@ BR2_PACKAGE_LTP_TESTSUITE_ARCH_SUPPORTS=y
 #
 # lttng-modules needs a Linux kernel to be built
 #
-# BR2_PACKAGE_MEMSTAT is not set
+BR2_PACKAGE_MEMSTAT=y
 # BR2_PACKAGE_NETPERF is not set
 
 #
@@ -632,6 +651,10 @@ BR2_PACKAGE_LTP_TESTSUITE_ARCH_SUPPORTS=y
 #
 # BR2_PACKAGE_BITWISE is not set
 # BR2_PACKAGE_BSDIFF is not set
+
+#
+# bustle needs a toolchain w/ wchar, threads
+#
 # BR2_PACKAGE_CHECK is not set
 # BR2_PACKAGE_CPPUNIT is not set
 # BR2_PACKAGE_CUKINIA is not set
@@ -795,7 +818,7 @@ BR2_PACKAGE_E2FSPROGS=y
 #
 # Games
 #
-# BR2_PACKAGE_ASCII_INVADERS is not set
+BR2_PACKAGE_ASCII_INVADERS=y
 # BR2_PACKAGE_CHOCOLATE_DOOM is not set
 # BR2_PACKAGE_FLARE_ENGINE is not set
 # BR2_PACKAGE_FROTZ is not set
@@ -904,7 +927,32 @@ BR2_PACKAGE_NETSURF_ARCH_SUPPORTS=y
 # psplash needs a toolchain w/ wchar
 #
 # BR2_PACKAGE_SDL is not set
-# BR2_PACKAGE_SDL2 is not set
+BR2_PACKAGE_SDL2=y
+
+#
+# DirectFB video driver needs directfb
+#
+
+#
+# X11 video driver needs X.org
+#
+
+#
+# KMS/DRM video driver needs libdrm
+#
+
+#
+# OpenGL support needs X11 and an OpenGL provider
+#
+
+#
+# OpenGL ES support needs an OpenGL ES provider
+#
+# BR2_PACKAGE_SDL2_GFX is not set
+# BR2_PACKAGE_SDL2_IMAGE is not set
+# BR2_PACKAGE_SDL2_MIXER is not set
+# BR2_PACKAGE_SDL2_NET is not set
+# BR2_PACKAGE_SDL2_TTF is not set
 
 #
 # Other GUIs
@@ -914,10 +962,7 @@ BR2_PACKAGE_NETSURF_ARCH_SUPPORTS=y
 # Qt5 needs host g++ >= 5.0, and a toolchain w/ gcc >= 5.0, wchar, NPTL, C++, dynamic library
 #
 # BR2_PACKAGE_MINIGUI5 is not set
-
-#
-# tekui needs a Lua interpreter and a toolchain w/ threads, dynamic library
-#
+# BR2_PACKAGE_TEKUI is not set
 
 #
 # weston needs udev and a toolchain w/ locale, threads, dynamic library, headers >= 3.0
@@ -999,7 +1044,13 @@ BR2_PACKAGE_NETSURF_ARCH_SUPPORTS=y
 #
 # dahdi-tools needs a toolchain w/ threads and a Linux kernel to be built
 #
-# BR2_PACKAGE_DBUS is not set
+BR2_PACKAGE_DBUS=y
+BR2_PACKAGE_DBUS_CPP=y
+
+#
+# dbus-glib needs a toolchain w/ wchar, threads
+#
+# BR2_PACKAGE_DBUS_TRIGGERD is not set
 # BR2_PACKAGE_DFU_UTIL is not set
 # BR2_PACKAGE_DMRAID is not set
 
@@ -1039,7 +1090,7 @@ BR2_PACKAGE_NETSURF_ARCH_SUPPORTS=y
 # BR2_PACKAGE_HWDATA is not set
 # BR2_PACKAGE_HWLOC is not set
 # BR2_PACKAGE_INPUT_EVENT_DAEMON is not set
-# BR2_PACKAGE_IOSTAT is not set
+BR2_PACKAGE_IOSTAT=y
 # BR2_PACKAGE_IPMITOOL is not set
 # BR2_PACKAGE_IRDA_UTILS is not set
 # BR2_PACKAGE_KBD is not set
@@ -1067,7 +1118,7 @@ BR2_PACKAGE_NETSURF_ARCH_SUPPORTS=y
 # BR2_PACKAGE_MDADM is not set
 # BR2_PACKAGE_MDEVD is not set
 # BR2_PACKAGE_MEMTESTER is not set
-# BR2_PACKAGE_MEMTOOL is not set
+BR2_PACKAGE_MEMTOOL=y
 
 #
 # minicom needs a toolchain w/ wchar
@@ -1145,7 +1196,7 @@ BR2_PACKAGE_NETSURF_ARCH_SUPPORTS=y
 # BR2_PACKAGE_SREDIRD is not set
 # BR2_PACKAGE_STATSERIAL is not set
 # BR2_PACKAGE_STM32FLASH is not set
-# BR2_PACKAGE_SYSSTAT is not set
+BR2_PACKAGE_SYSSTAT=y
 
 #
 # targetcli-fb depends on Python
@@ -1217,12 +1268,257 @@ BR2_PACKAGE_HOST_ERLANG_ARCH_SUPPORTS=y
 #
 # BR2_PACKAGE_HASERL is not set
 # BR2_PACKAGE_JIMTCL is not set
-# BR2_PACKAGE_LUA is not set
+BR2_PACKAGE_LUA=y
+BR2_PACKAGE_PROVIDES_LUAINTERPRETER="lua"
+# BR2_PACKAGE_LUA_5_1 is not set
+BR2_PACKAGE_LUA_5_3=y
+# BR2_PACKAGE_LUA_5_4 is not set
+# BR2_PACKAGE_LUA_32BITS is not set
+BR2_PACKAGE_LUA_EDITING_NONE=y
+# BR2_PACKAGE_LUA_READLINE is not set
+# BR2_PACKAGE_LUA_LINENOISE is not set
+BR2_PACKAGE_HAS_LUAINTERPRETER=y
+BR2_PACKAGE_LUAINTERPRETER_ABI_VERSION="5.3"
+BR2_PACKAGE_LUAINTERPRETER_ABI_VERSION_5_3=y
 BR2_PACKAGE_PROVIDES_HOST_LUAINTERPRETER="host-lua"
-# BR2_PACKAGE_MICROPYTHON is not set
+
+#
+# Lua libraries/modules
+#
+# BR2_PACKAGE_ARGPARSE is not set
+# BR2_PACKAGE_CGILUA is not set
+# BR2_PACKAGE_COPAS is not set
+# BR2_PACKAGE_COXPCALL is not set
+# BR2_PACKAGE_DADO is not set
+
+#
+# easydbus needs a toolchain w/ wchar, threads, Lua <= 5.3
+#
+# BR2_PACKAGE_LBASE64 is not set
+
+#
+# ljlinenoise needs LuaJIT
+#
+
+#
+# ljsyscall needs LuaJIT
+#
+# BR2_PACKAGE_LPEG is not set
+# BR2_PACKAGE_LPTY is not set
+# BR2_PACKAGE_LRANDOM is not set
+# BR2_PACKAGE_LSQLITE3 is not set
+# BR2_PACKAGE_LUA_BASEXX is not set
+# BR2_PACKAGE_LUA_BINARYHEAP is not set
+# BR2_PACKAGE_LUA_BIT32 is not set
+# BR2_PACKAGE_LUA_CJSON is not set
+# BR2_PACKAGE_LUA_COAT is not set
+
+#
+# lua-coatpersistent needs lsqlite3 or luasql-sqlite3
+#
+# BR2_PACKAGE_LUA_CODEGEN is not set
+# BR2_PACKAGE_LUA_CQUEUES is not set
+# BR2_PACKAGE_LUA_CSNAPPY is not set
+# BR2_PACKAGE_LUA_CURL is not set
+# BR2_PACKAGE_LUA_DATAFILE is not set
+# BR2_PACKAGE_LUA_EV is not set
+# BR2_PACKAGE_LUA_FIFO is not set
+# BR2_PACKAGE_LUA_FLU is not set
+# BR2_PACKAGE_LUA_GD is not set
+# BR2_PACKAGE_LUA_HTTP is not set
+# BR2_PACKAGE_LUA_ICONV is not set
+# BR2_PACKAGE_LUA_LIVR is not set
+# BR2_PACKAGE_LUA_LIVR_EXTRA is not set
+# BR2_PACKAGE_LUA_LPEG_PATTERNS is not set
+# BR2_PACKAGE_LUA_LUNITX is not set
+# BR2_PACKAGE_LUA_LYAML is not set
+# BR2_PACKAGE_LUA_MARKDOWN is not set
+# BR2_PACKAGE_LUA_MESSAGEPACK is not set
+
+#
+# lua-msgpack-native needs Lua 5.1 or LuaJIT
+#
+# BR2_PACKAGE_LUA_PERIPHERY is not set
+# BR2_PACKAGE_LUA_RESTY_HTTP is not set
+# BR2_PACKAGE_LUA_ROTAS is not set
+# BR2_PACKAGE_LUA_SAILOR is not set
+# BR2_PACKAGE_LUA_SDL2 is not set
+# BR2_PACKAGE_LUA_SILVA is not set
+# BR2_PACKAGE_LUA_STD_DEBUG is not set
+# BR2_PACKAGE_LUA_STD_NORMALIZE is not set
+# BR2_PACKAGE_LUA_STDLIB is not set
+# BR2_PACKAGE_LUA_TESTMORE is not set
+# BR2_PACKAGE_LUA_UTF8 is not set
+# BR2_PACKAGE_LUA_VALUA is not set
+
+#
+# luabitop needs Lua 5.1
+#
+# BR2_PACKAGE_LUADBI is not set
+# BR2_PACKAGE_LUADBI_SQLITE3 is not set
+# BR2_PACKAGE_LUAEXPAT is not set
+# BR2_PACKAGE_LUAEXPATUTILS is not set
+# BR2_PACKAGE_LUAFILESYSTEM is not set
+# BR2_PACKAGE_LUAJSON is not set
+
+#
+# lualdap needs a toolchain w/ wchar, dynamic library, Lua <= 5.3
+#
+# BR2_PACKAGE_LUALOGGING is not set
+# BR2_PACKAGE_LUAOSSL is not set
+# BR2_PACKAGE_LUAPOSIX is not set
+# BR2_PACKAGE_LUASEC is not set
+# BR2_PACKAGE_LUASOCKET is not set
+# BR2_PACKAGE_LUASQL_SQLITE3 is not set
+# BR2_PACKAGE_LUASYSLOG is not set
+# BR2_PACKAGE_LUTOK is not set
+# BR2_PACKAGE_LUV is not set
+
+#
+# luvi needs LuaJIT
+#
+# BR2_PACKAGE_LZLIB is not set
+
+#
+# orbit needs a Lua 5.1 interpreter
+#
+# BR2_PACKAGE_RINGS is not set
+
+#
+# turbolua needs LuaJIT
+#
+# BR2_PACKAGE_WSAPI is not set
+# BR2_PACKAGE_WSAPI_FCGI is not set
+# BR2_PACKAGE_WSAPI_XAVANTE is not set
+# BR2_PACKAGE_XAVANTE is not set
+BR2_PACKAGE_MICROPYTHON=y
+BR2_PACKAGE_MICROPYTHON_LIB=y
 BR2_PACKAGE_HOST_MONO_ARCH_SUPPORTS=y
 BR2_PACKAGE_HOST_OPENJDK_BIN_ARCH_SUPPORTS=y
-# BR2_PACKAGE_PERL is not set
+BR2_PACKAGE_PERL=y
+BR2_PACKAGE_PERL_MODULES=""
+# BR2_PACKAGE_PERL_THREADS is not set
+
+#
+# Perl libraries/modules
+#
+# BR2_PACKAGE_PERL_APACHE_LOGFORMAT_COMPILER is not set
+# BR2_PACKAGE_PERL_APPCONFIG is not set
+# BR2_PACKAGE_PERL_ASTRO_SUNTIME is not set
+# BR2_PACKAGE_PERL_CLASS_INSPECTOR is not set
+# BR2_PACKAGE_PERL_CLASS_LOAD is not set
+# BR2_PACKAGE_PERL_CLASS_METHOD_MODIFIERS is not set
+# BR2_PACKAGE_PERL_CLASS_STD is not set
+# BR2_PACKAGE_PERL_CLASS_STD_FAST is not set
+# BR2_PACKAGE_PERL_CONVERT_ASN1 is not set
+# BR2_PACKAGE_PERL_COOKIE_BAKER is not set
+# BR2_PACKAGE_PERL_CRYPT_BLOWFISH is not set
+# BR2_PACKAGE_PERL_CRYPT_CBC is not set
+# BR2_PACKAGE_PERL_CRYPT_OPENSSL_AES is not set
+# BR2_PACKAGE_PERL_CRYPT_OPENSSL_RANDOM is not set
+# BR2_PACKAGE_PERL_CRYPT_OPENSSL_RSA is not set
+# BR2_PACKAGE_PERL_DATA_DUMP is not set
+# BR2_PACKAGE_PERL_DATA_OPTLIST is not set
+# BR2_PACKAGE_PERL_DATA_UUID is not set
+# BR2_PACKAGE_PERL_DATE_MANIP is not set
+# BR2_PACKAGE_PERL_DATETIME_TINY is not set
+# BR2_PACKAGE_PERL_DBD_MYSQL is not set
+# BR2_PACKAGE_PERL_DBI is not set
+# BR2_PACKAGE_PERL_DEVEL_CYCLE is not set
+# BR2_PACKAGE_PERL_DEVEL_GLOBALDESTRUCTION is not set
+# BR2_PACKAGE_PERL_DEVEL_SIZE is not set
+# BR2_PACKAGE_PERL_DEVEL_STACKTRACE is not set
+# BR2_PACKAGE_PERL_DEVEL_STACKTRACE_ASHTML is not set
+# BR2_PACKAGE_PERL_DEVICE_SERIALPORT is not set
+# BR2_PACKAGE_PERL_DIGEST_HMAC is not set
+# BR2_PACKAGE_PERL_DIGEST_SHA1 is not set
+# BR2_PACKAGE_PERL_DIST_CHECKCONFLICTS is not set
+# BR2_PACKAGE_PERL_ENCODE_DETECT is not set
+# BR2_PACKAGE_PERL_ENCODE_LOCALE is not set
+# BR2_PACKAGE_PERL_EXPORTER_TINY is not set
+# BR2_PACKAGE_PERL_FILE_LISTING is not set
+# BR2_PACKAGE_PERL_FILE_SHAREDIR is not set
+# BR2_PACKAGE_PERL_FILE_SLURP is not set
+# BR2_PACKAGE_PERL_FILE_UTIL is not set
+# BR2_PACKAGE_PERL_FILESYS_NOTIFY_SIMPLE is not set
+# BR2_PACKAGE_PERL_GD is not set
+# BR2_PACKAGE_PERL_GDGRAPH is not set
+# BR2_PACKAGE_PERL_GDTEXTUTIL is not set
+# BR2_PACKAGE_PERL_HASH_MULTIVALUE is not set
+# BR2_PACKAGE_PERL_HTML_PARSER is not set
+# BR2_PACKAGE_PERL_HTML_TAGSET is not set
+# BR2_PACKAGE_PERL_HTTP_COOKIES is not set
+# BR2_PACKAGE_PERL_HTTP_DAEMON is not set
+# BR2_PACKAGE_PERL_HTTP_DATE is not set
+# BR2_PACKAGE_PERL_HTTP_ENTITY_PARSER is not set
+# BR2_PACKAGE_PERL_HTTP_HEADERS_FAST is not set
+# BR2_PACKAGE_PERL_HTTP_MESSAGE is not set
+# BR2_PACKAGE_PERL_HTTP_MULTIPARTPARSER is not set
+# BR2_PACKAGE_PERL_HTTP_NEGOTIATE is not set
+# BR2_PACKAGE_PERL_I18N is not set
+# BR2_PACKAGE_PERL_IO_HTML is not set
+# BR2_PACKAGE_PERL_IO_INTERFACE is not set
+# BR2_PACKAGE_PERL_IO_SOCKET_MULTICAST is not set
+# BR2_PACKAGE_PERL_IO_SOCKET_SSL is not set
+# BR2_PACKAGE_PERL_JSON_MAYBEXS is not set
+# BR2_PACKAGE_PERL_JSON_TINY is not set
+# BR2_PACKAGE_PERL_LIBWWW_PERL is not set
+# BR2_PACKAGE_PERL_LOCALE_MAKETEXT_LEXICON is not set
+# BR2_PACKAGE_PERL_LWP_MEDIATYPES is not set
+# BR2_PACKAGE_PERL_LWP_PROTOCOL_HTTPS is not set
+# BR2_PACKAGE_PERL_MAIL_DKIM is not set
+# BR2_PACKAGE_PERL_MAILTOOLS is not set
+# BR2_PACKAGE_PERL_MATH_INT64 is not set
+# BR2_PACKAGE_PERL_MATH_PRIME_UTIL is not set
+# BR2_PACKAGE_PERL_MIME_BASE64_URLSAFE is not set
+# BR2_PACKAGE_PERL_MIME_TOOLS is not set
+# BR2_PACKAGE_PERL_MODULE_IMPLEMENTATION is not set
+# BR2_PACKAGE_PERL_MODULE_RUNTIME is not set
+# BR2_PACKAGE_PERL_MOJOLICIOUS is not set
+# BR2_PACKAGE_PERL_MOJOLICIOUS_PLUGIN_AUTHENTICATION is not set
+# BR2_PACKAGE_PERL_MOJOLICIOUS_PLUGIN_AUTHORIZATION is not set
+# BR2_PACKAGE_PERL_MOJOLICIOUS_PLUGIN_CSPHEADER is not set
+# BR2_PACKAGE_PERL_MOJOLICIOUS_PLUGIN_I18N is not set
+# BR2_PACKAGE_PERL_MOJOLICIOUS_PLUGIN_SECURITYHEADER is not set
+# BR2_PACKAGE_PERL_MOO is not set
+# BR2_PACKAGE_PERL_MOZILLA_CA is not set
+# BR2_PACKAGE_PERL_NET_DNS is not set
+# BR2_PACKAGE_PERL_NET_HTTP is not set
+# BR2_PACKAGE_PERL_NET_SNMP is not set
+
+#
+# perl-net-ssh2 needs libssh2 with OpenSSL or Libgcrypt backend
+#
+# BR2_PACKAGE_PERL_NET_SSLEAY is not set
+# BR2_PACKAGE_PERL_NET_TELNET is not set
+# BR2_PACKAGE_PERL_NETADDR_IP is not set
+# BR2_PACKAGE_PERL_NUMBER_BYTES_HUMAN is not set
+# BR2_PACKAGE_PERL_PACKAGE_STASH is not set
+# BR2_PACKAGE_PERL_PARAMS_UTIL is not set
+# BR2_PACKAGE_PERL_PARSE_YAPP is not set
+# BR2_PACKAGE_PERL_PATH_TINY is not set
+# BR2_PACKAGE_PERL_PLACK is not set
+# BR2_PACKAGE_PERL_POSIX_STRFTIME_COMPILER is not set
+# BR2_PACKAGE_PERL_ROLE_TINY is not set
+# BR2_PACKAGE_PERL_STREAM_BUFFERED is not set
+# BR2_PACKAGE_PERL_SUB_EXPORTER_PROGRESSIVE is not set
+# BR2_PACKAGE_PERL_SUB_INSTALL is not set
+# BR2_PACKAGE_PERL_SUB_QUOTE is not set
+# BR2_PACKAGE_PERL_SYS_CPU is not set
+# BR2_PACKAGE_PERL_SYS_MEMINFO is not set
+# BR2_PACKAGE_PERL_SYS_MMAP is not set
+# BR2_PACKAGE_PERL_TIME_PARSEDATE is not set
+# BR2_PACKAGE_PERL_TIMEDATE is not set
+# BR2_PACKAGE_PERL_TRY_TINY is not set
+# BR2_PACKAGE_PERL_TYPE_TINY is not set
+# BR2_PACKAGE_PERL_URI is not set
+# BR2_PACKAGE_PERL_WWW_FORM_URLENCODED is not set
+# BR2_PACKAGE_PERL_WWW_ROBOTRULES is not set
+# BR2_PACKAGE_PERL_X10 is not set
+# BR2_PACKAGE_PERL_XML_LIBXML is not set
+# BR2_PACKAGE_PERL_XML_NAMESPACESUPPORT is not set
+# BR2_PACKAGE_PERL_XML_SAX is not set
+# BR2_PACKAGE_PERL_XML_SAX_BASE is not set
 # BR2_PACKAGE_PHP is not set
 
 #
@@ -1316,7 +1612,7 @@ BR2_PACKAGE_OPENAL_ARCH_SUPPORTS=y
 #
 # BR2_PACKAGE_LIBMSPACK is not set
 # BR2_PACKAGE_LIBSQUISH is not set
-# BR2_PACKAGE_LIBZIP is not set
+BR2_PACKAGE_LIBZIP=y
 # BR2_PACKAGE_LZ4 is not set
 # BR2_PACKAGE_LZO is not set
 
@@ -1573,7 +1869,7 @@ BR2_PACKAGE_PROVIDES_HOST_OPENSSL="host-libopenssl"
 # libmediaart needs a toolchain w/ wchar, threads
 #
 # BR2_PACKAGE_LIBMNG is not set
-# BR2_PACKAGE_LIBPNG is not set
+BR2_PACKAGE_LIBPNG=y
 # BR2_PACKAGE_LIBQRENCODE is not set
 # BR2_PACKAGE_LIBRAW is not set
 
@@ -1754,7 +2050,7 @@ BR2_PACKAGE_PROVIDES_HOST_OPENSSL="host-libopenssl"
 #
 # BR2_PACKAGE_BENEJSON is not set
 # BR2_PACKAGE_CJSON is not set
-# BR2_PACKAGE_EXPAT is not set
+BR2_PACKAGE_EXPAT=y
 # BR2_PACKAGE_JANSSON is not set
 # BR2_PACKAGE_JOSE is not set
 # BR2_PACKAGE_JSMN is not set
@@ -2167,7 +2463,7 @@ BR2_PACKAGE_LIBBSD_ARCH_SUPPORTS=y
 # BR2_PACKAGE_LIBEV is not set
 # BR2_PACKAGE_LIBEVDEV is not set
 # BR2_PACKAGE_LIBEVENT is not set
-# BR2_PACKAGE_LIBFFI is not set
+BR2_PACKAGE_LIBFFI=y
 
 #
 # libgee needs a toolchain w/ wchar, threads
@@ -2218,7 +2514,7 @@ BR2_PACKAGE_LIBNSPR_ARCH_SUPPORT=y
 # BR2_PACKAGE_MPFR is not set
 # BR2_PACKAGE_MPIR is not set
 # BR2_PACKAGE_MSGPACK is not set
-# BR2_PACKAGE_MUSL_FTS is not set
+BR2_PACKAGE_MUSL_FTS=y
 # BR2_PACKAGE_ORC is not set
 # BR2_PACKAGE_P11_KIT is not set
 BR2_PACKAGE_POCO_ARCH_SUPPORTS=y
@@ -2289,13 +2585,19 @@ BR2_PACKAGE_PROTOBUF_ARCH_SUPPORTS=y
 # libunistring needs a toolchain w/ wchar
 #
 # BR2_PACKAGE_LINENOISE is not set
-# BR2_PACKAGE_NCURSES is not set
+BR2_PACKAGE_NCURSES=y
+# BR2_PACKAGE_NCURSES_TARGET_PROGS is not set
+BR2_PACKAGE_NCURSES_ADDITIONAL_TERMINFO=""
 
 #
 # newt needs a toolchain w/ wchar, dynamic library
 #
 # BR2_PACKAGE_ONIGURUMA is not set
-# BR2_PACKAGE_PCRE is not set
+BR2_PACKAGE_PCRE=y
+# BR2_PACKAGE_PCRE_16 is not set
+# BR2_PACKAGE_PCRE_32 is not set
+# BR2_PACKAGE_PCRE_UTF is not set
+# BR2_PACKAGE_PCRE_UCP is not set
 # BR2_PACKAGE_PCRE2 is not set
 BR2_PACKAGE_POPT=y
 # BR2_PACKAGE_RE2 is not set
@@ -2452,8 +2754,7 @@ BR2_PACKAGE_BITCOIN_ARCH_SUPPORTS=y
 #
 # ejabberd needs erlang, toolchain w/ C++
 #
-BR2_PACKAGE_ETHTOOL=y
-BR2_PACKAGE_ETHTOOL_PRETTY_PRINT=y
+# BR2_PACKAGE_ETHTOOL is not set
 # BR2_PACKAGE_FAIFA is not set
 # BR2_PACKAGE_FASTD is not set
 # BR2_PACKAGE_FCGIWRAP is not set
@@ -2513,7 +2814,7 @@ BR2_PACKAGE_HAPROXY_ARCH_SUPPORTS=y
 # BR2_PACKAGE_IODINE is not set
 # BR2_PACKAGE_IPERF is not set
 # BR2_PACKAGE_IPERF3 is not set
-BR2_PACKAGE_IPROUTE2=y
+# BR2_PACKAGE_IPROUTE2 is not set
 # BR2_PACKAGE_IPSET is not set
 # BR2_PACKAGE_IPTABLES is not set
 # BR2_PACKAGE_IPTRAF_NG is not set
@@ -2635,10 +2936,7 @@ BR2_PACKAGE_IPROUTE2=y
 # BR2_PACKAGE_PPTP_LINUX is not set
 # BR2_PACKAGE_PRIVOXY is not set
 # BR2_PACKAGE_PROFTPD is not set
-
-#
-# prosody needs the lua interpreter, dynamic library
-#
+# BR2_PACKAGE_PROSODY is not set
 # BR2_PACKAGE_PROXYCHAINS_NG is not set
 # BR2_PACKAGE_PTPD is not set
 # BR2_PACKAGE_PTPD2 is not set
@@ -2658,7 +2956,7 @@ BR2_PACKAGE_IPROUTE2=y
 # BR2_PACKAGE_RP_PPPOE is not set
 # BR2_PACKAGE_RPCBIND is not set
 # BR2_PACKAGE_RSH_REDONE is not set
-BR2_PACKAGE_RSYNC=y
+# BR2_PACKAGE_RSYNC is not set
 
 #
 # rtorrent needs a toolchain w/ C++, threads, wchar, gcc >= 4.9
@@ -2856,7 +3154,7 @@ BR2_PACKAGE_RSYNC=y
 # Shells
 #
 # BR2_PACKAGE_MKSH is not set
-# BR2_PACKAGE_ZSH is not set
+BR2_PACKAGE_ZSH=y
 
 #
 # Utilities
@@ -2866,7 +3164,7 @@ BR2_PACKAGE_RSYNC=y
 # BR2_PACKAGE_DIALOG is not set
 # BR2_PACKAGE_DTACH is not set
 # BR2_PACKAGE_EASY_RSA is not set
-# BR2_PACKAGE_FILE is not set
+BR2_PACKAGE_FILE=y
 # BR2_PACKAGE_GNUPG is not set
 # BR2_PACKAGE_GNUPG2 is not set
 # BR2_PACKAGE_INOTIFY_TOOLS is not set
@@ -2884,8 +3182,8 @@ BR2_PACKAGE_RSYNC=y
 # ranger needs a toolchain w/ wchar, threads, dynamic library
 #
 # BR2_PACKAGE_RTTY is not set
-# BR2_PACKAGE_SCREEN is not set
-# BR2_PACKAGE_SUDO is not set
+BR2_PACKAGE_SCREEN=y
+BR2_PACKAGE_SUDO=y
 # BR2_PACKAGE_TINI is not set
 
 #
@@ -2945,7 +3243,7 @@ BR2_PACKAGE_RSYNC=y
 #
 # gkrellm needs a toolchain w/ wchar, threads
 #
-# BR2_PACKAGE_HTOP is not set
+BR2_PACKAGE_HTOP=y
 # BR2_PACKAGE_IBM_SW_TPM2 is not set
 BR2_PACKAGE_INITSCRIPTS=y
 
@@ -3090,7 +3388,7 @@ BR2_PACKAGE_UTIL_LINUX_MOUNT=y
 # BR2_PACKAGE_UTIL_LINUX_WDCTL is not set
 # BR2_PACKAGE_UTIL_LINUX_WRITE is not set
 # BR2_PACKAGE_UTIL_LINUX_ZRAMCTL is not set
-# BR2_PACKAGE_WATCHDOG is not set
+BR2_PACKAGE_WATCHDOG=y
 
 #
 # xdg-dbus-proxy needs a toolchain w/ wchar, threads
@@ -3099,7 +3397,7 @@ BR2_PACKAGE_UTIL_LINUX_MOUNT=y
 #
 # Text editors and viewers
 #
-# BR2_PACKAGE_ED is not set
+BR2_PACKAGE_ED=y
 # BR2_PACKAGE_JOE is not set
 
 #
@@ -3146,25 +3444,7 @@ BR2_TARGET_ROOTFS_CPIO_GZIP=y
 # BR2_TARGET_ROOTFS_CPIO_UIMAGE is not set
 # BR2_TARGET_ROOTFS_CRAMFS is not set
 # BR2_TARGET_ROOTFS_EROFS is not set
-BR2_TARGET_ROOTFS_EXT2=y
-# BR2_TARGET_ROOTFS_EXT2_2r0 is not set
-# BR2_TARGET_ROOTFS_EXT2_2r1 is not set
-# BR2_TARGET_ROOTFS_EXT2_3 is not set
-BR2_TARGET_ROOTFS_EXT2_4=y
-BR2_TARGET_ROOTFS_EXT2_GEN=4
-BR2_TARGET_ROOTFS_EXT2_REV=1
-BR2_TARGET_ROOTFS_EXT2_LABEL="rootfs"
-BR2_TARGET_ROOTFS_EXT2_SIZE="60M"
-BR2_TARGET_ROOTFS_EXT2_INODES=0
-BR2_TARGET_ROOTFS_EXT2_RESBLKS=5
-BR2_TARGET_ROOTFS_EXT2_MKFS_OPTIONS="-O ^64bit"
-BR2_TARGET_ROOTFS_EXT2_NONE=y
-# BR2_TARGET_ROOTFS_EXT2_GZIP is not set
-# BR2_TARGET_ROOTFS_EXT2_BZIP2 is not set
-# BR2_TARGET_ROOTFS_EXT2_LZ4 is not set
-# BR2_TARGET_ROOTFS_EXT2_LZMA is not set
-# BR2_TARGET_ROOTFS_EXT2_LZO is not set
-# BR2_TARGET_ROOTFS_EXT2_XZ is not set
+# BR2_TARGET_ROOTFS_EXT2 is not set
 # BR2_TARGET_ROOTFS_F2FS is not set
 
 #
