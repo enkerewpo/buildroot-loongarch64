@@ -23,4 +23,4 @@ echo "Processing /etc/profile..."
 # echo "we will run three script symbol three stage"
 # echo "some stage will waste a few minutes. don't shutdowm until finish!"
 # /home/handle_judge.sh | tee /dev/tty0
-echo "This is a customized busybox environment for linux in virtual machine environment."
+echo "This is a customized busybox environment for hvisor zone's linux environment."
