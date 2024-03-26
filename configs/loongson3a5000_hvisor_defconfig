@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Buildroot -g93030e84 Configuration
+# Buildroot -g33cfe3f8 Configuration
 #
 BR2_HAVE_DOT_CONFIG=y
 BR2_HOST_GCC_AT_LEAST_4_9=y
@@ -633,10 +633,6 @@ BR2_PACKAGE_MEMSTAT=y
 #
 # BR2_PACKAGE_BITWISE is not set
 # BR2_PACKAGE_BSDIFF is not set
-
-#
-# bustle needs a toolchain w/ wchar, threads
-#
 # BR2_PACKAGE_CHECK is not set
 # BR2_PACKAGE_CPPUNIT is not set
 # BR2_PACKAGE_CUKINIA is not set
@@ -1026,13 +1022,7 @@ BR2_PACKAGE_SDL2=y
 #
 # dahdi-tools needs a toolchain w/ threads and a Linux kernel to be built
 #
-BR2_PACKAGE_DBUS=y
-BR2_PACKAGE_DBUS_CPP=y
-
-#
-# dbus-glib needs a toolchain w/ wchar, threads
-#
-# BR2_PACKAGE_DBUS_TRIGGERD is not set
+# BR2_PACKAGE_DBUS is not set
 # BR2_PACKAGE_DFU_UTIL is not set
 # BR2_PACKAGE_DMRAID is not set
 
