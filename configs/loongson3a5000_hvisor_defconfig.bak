@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Buildroot -gac06ebe3 Configuration
+# Buildroot -g33cfe3f8 Configuration
 #
 BR2_HAVE_DOT_CONFIG=y
 BR2_HOST_GCC_AT_LEAST_4_9=y
@@ -324,8 +324,8 @@ BR2_TOOLCHAIN_HAS_ATOMIC=y
 #
 BR2_ROOTFS_SKELETON_DEFAULT=y
 # BR2_ROOTFS_SKELETON_CUSTOM is not set
-BR2_TARGET_GENERIC_HOSTNAME="dedsec"
-BR2_TARGET_GENERIC_ISSUE="Welcome to hvisor(loongarch) - Buildroot/wheatfox 2024"
+BR2_TARGET_GENERIC_HOSTNAME="Loongson"
+BR2_TARGET_GENERIC_ISSUE="Welcome to Loongson-gd ramdisk"
 # BR2_TARGET_GENERIC_PASSWD_SHA256 is not set
 BR2_TARGET_GENERIC_PASSWD_SHA512=y
 BR2_TARGET_GENERIC_PASSWD_METHOD="sha-512"
@@ -347,28 +347,16 @@ BR2_ROOTFS_DEVICE_CREATION_DYNAMIC_DEVTMPFS=y
 BR2_ROOTFS_DEVICE_TABLE="system/device_table.txt"
 # BR2_ROOTFS_DEVICE_TABLE_SUPPORTS_EXTENDED_ATTRIBUTES is not set
 BR2_ROOTFS_MERGED_USR=y
-BR2_TARGET_ENABLE_ROOT_LOGIN=y
-BR2_TARGET_GENERIC_ROOT_PASSWD="1234"
-# BR2_SYSTEM_BIN_SH_BUSYBOX is not set
-BR2_SYSTEM_BIN_SH_BASH=y
-# BR2_SYSTEM_BIN_SH_DASH is not set
-# BR2_SYSTEM_BIN_SH_MKSH is not set
-# BR2_SYSTEM_BIN_SH_ZSH is not set
+# BR2_TARGET_ENABLE_ROOT_LOGIN is not set
+BR2_SYSTEM_BIN_SH_BUSYBOX=y
+
+#
+# bash, dash, mksh, zsh need BR2_PACKAGE_BUSYBOX_SHOW_OTHERS
+#
 # BR2_SYSTEM_BIN_SH_NONE is not set
-BR2_SYSTEM_BIN_SH="bash"
-BR2_TARGET_GENERIC_GETTY=y
+# BR2_TARGET_GENERIC_GETTY is not set
 BR2_TARGET_GENERIC_GETTY_AUTOLOGIN=y
 BR2_TARGET_TTY0_GETTY_ENABLE=y
-BR2_TARGET_GENERIC_GETTY_PORT="console"
-BR2_TARGET_GENERIC_GETTY_BAUDRATE_KEEP=y
-# BR2_TARGET_GENERIC_GETTY_BAUDRATE_9600 is not set
-# BR2_TARGET_GENERIC_GETTY_BAUDRATE_19200 is not set
-# BR2_TARGET_GENERIC_GETTY_BAUDRATE_38400 is not set
-# BR2_TARGET_GENERIC_GETTY_BAUDRATE_57600 is not set
-# BR2_TARGET_GENERIC_GETTY_BAUDRATE_115200 is not set
-BR2_TARGET_GENERIC_GETTY_BAUDRATE="0"
-BR2_TARGET_GENERIC_GETTY_TERM="vt100"
-BR2_TARGET_GENERIC_GETTY_OPTIONS=""
 BR2_TARGET_GENERIC_REMOUNT_ROOTFS_RW=y
 BR2_SYSTEM_DHCP=""
 BR2_SYSTEM_DEFAULT_PATH="/bin:/sbin:/usr/bin:/usr/sbin"
@@ -397,7 +385,7 @@ BR2_BUSYBOX_PROFILE=y
 BR2_PACKAGE_BUSYBOX=y
 BR2_PACKAGE_BUSYBOX_CONFIG="package/busybox/busybox.config"
 BR2_PACKAGE_BUSYBOX_CONFIG_FRAGMENT_FILES=""
-BR2_PACKAGE_BUSYBOX_SHOW_OTHERS=y
+# BR2_PACKAGE_BUSYBOX_SHOW_OTHERS is not set
 # BR2_PACKAGE_BUSYBOX_INDIVIDUAL_BINARIES is not set
 # BR2_PACKAGE_BUSYBOX_WATCHDOG is not set
 BR2_PACKAGE_SKELETON=y
@@ -528,10 +516,6 @@ BR2_PACKAGE_PULSEAUDIO_HAS_ATOMIC=y
 BR2_PACKAGE_BZIP2=y
 
 #
-# gzip needs a toolchain w/ wchar
-#
-
-#
 # lrzip needs a toolchain w/ wchar, threads, C++
 #
 # BR2_PACKAGE_LZIP is not set
@@ -549,7 +533,6 @@ BR2_PACKAGE_BZIP2=y
 #
 # unrar needs a toolchain w/ C++, wchar, threads
 #
-# BR2_PACKAGE_UNZIP is not set
 # BR2_PACKAGE_XZ is not set
 BR2_PACKAGE_ZIP=y
 # BR2_PACKAGE_ZSTD is not set
@@ -587,7 +570,7 @@ BR2_PACKAGE_ZIP=y
 # BR2_PACKAGE_FIO is not set
 BR2_PACKAGE_GDB_ARCH_SUPPORTS=y
 # BR2_PACKAGE_GDB is not set
-BR2_PACKAGE_IOZONE=y
+# BR2_PACKAGE_IOZONE is not set
 
 #
 # ktap needs a Linux kernel to be built
@@ -598,7 +581,6 @@ BR2_PACKAGE_IOZONE=y
 # latencytop needs a toolchain w/ wchar, threads
 #
 # BR2_PACKAGE_LMBENCH is not set
-# BR2_PACKAGE_LSOF is not set
 BR2_PACKAGE_LTP_TESTSUITE_ARCH_SUPPORTS=y
 # BR2_PACKAGE_LTP_TESTSUITE is not set
 
@@ -626,7 +608,7 @@ BR2_PACKAGE_MEMSTAT=y
 # BR2_PACKAGE_PV is not set
 # BR2_PACKAGE_RAMSMP is not set
 # BR2_PACKAGE_RAMSPEED is not set
-BR2_PACKAGE_RT_TESTS=y
+# BR2_PACKAGE_RT_TESTS is not set
 # BR2_PACKAGE_SPIDEV_TEST is not set
 # BR2_PACKAGE_STRACE is not set
 # BR2_PACKAGE_STRESS is not set
@@ -645,17 +627,12 @@ BR2_PACKAGE_RT_TESTS=y
 #
 # Development tools
 #
-# BR2_PACKAGE_BATS_CORE is not set
 
 #
 # binutils needs a toolchain w/ wchar
 #
 # BR2_PACKAGE_BITWISE is not set
 # BR2_PACKAGE_BSDIFF is not set
-
-#
-# bustle needs a toolchain w/ wchar, threads
-#
 # BR2_PACKAGE_CHECK is not set
 # BR2_PACKAGE_CPPUNIT is not set
 # BR2_PACKAGE_CUKINIA is not set
@@ -665,42 +642,17 @@ BR2_PACKAGE_RT_TESTS=y
 # cvs needs a toolchain w/ wchar
 #
 # BR2_PACKAGE_CXXTEST is not set
-
-#
-# diffutils needs a toolchain w/ wchar
-#
-# BR2_PACKAGE_DOS2UNIX is not set
-
-#
-# findutils needs a toolchain w/ wchar
-#
 # BR2_PACKAGE_FLEX is not set
-
-#
-# gawk needs a toolchain w/ wchar
-#
 # BR2_PACKAGE_GETTEXT is not set
 BR2_PACKAGE_PROVIDES_HOST_GETTEXT="host-gettext-tiny"
 # BR2_PACKAGE_GIT is not set
 # BR2_PACKAGE_GIT_CRYPT is not set
 # BR2_PACKAGE_GPERF is not set
-
-#
-# grep needs a toolchain w/ wchar
-#
 # BR2_PACKAGE_JO is not set
 # BR2_PACKAGE_JQ is not set
 # BR2_PACKAGE_LIBTOOL is not set
 # BR2_PACKAGE_MAKE is not set
-
-#
-# patch needs a toolchain w/ wchar
-#
 # BR2_PACKAGE_PKGCONF is not set
-
-#
-# sed needs a toolchain w/ wchar
-#
 # BR2_PACKAGE_SUBVERSION is not set
 
 #
@@ -844,7 +796,7 @@ BR2_PACKAGE_E2FSPROGS=y
 #
 # Games
 #
-# BR2_PACKAGE_ASCII_INVADERS is not set
+BR2_PACKAGE_ASCII_INVADERS=y
 # BR2_PACKAGE_CHOCOLATE_DOOM is not set
 # BR2_PACKAGE_FLARE_ENGINE is not set
 # BR2_PACKAGE_FROTZ is not set
@@ -927,7 +879,6 @@ BR2_PACKAGE_NETSURF_ARCH_SUPPORTS=y
 # BR2_PACKAGE_FB_TEST_APP is not set
 # BR2_PACKAGE_FBDUMP is not set
 # BR2_PACKAGE_FBGRAB is not set
-# BR2_PACKAGE_FBSET is not set
 
 #
 # fbterm needs a toolchain w/ C++, wchar, locale
@@ -1071,13 +1022,7 @@ BR2_PACKAGE_SDL2=y
 #
 # dahdi-tools needs a toolchain w/ threads and a Linux kernel to be built
 #
-BR2_PACKAGE_DBUS=y
-# BR2_PACKAGE_DBUS_CPP is not set
-
-#
-# dbus-glib needs a toolchain w/ wchar, threads
-#
-# BR2_PACKAGE_DBUS_TRIGGERD is not set
+# BR2_PACKAGE_DBUS is not set
 # BR2_PACKAGE_DFU_UTIL is not set
 # BR2_PACKAGE_DMRAID is not set
 
@@ -1114,10 +1059,8 @@ BR2_PACKAGE_DBUS=y
 #
 # gvfs needs a toolchain w/ wchar, threads, dynamic library
 #
-# BR2_PACKAGE_HDPARM is not set
 # BR2_PACKAGE_HWDATA is not set
 # BR2_PACKAGE_HWLOC is not set
-# BR2_PACKAGE_I2C_TOOLS is not set
 # BR2_PACKAGE_INPUT_EVENT_DAEMON is not set
 BR2_PACKAGE_IOSTAT=y
 # BR2_PACKAGE_IPMITOOL is not set
@@ -1424,7 +1367,130 @@ BR2_PACKAGE_MICROPYTHON=y
 BR2_PACKAGE_MICROPYTHON_LIB=y
 BR2_PACKAGE_HOST_MONO_ARCH_SUPPORTS=y
 BR2_PACKAGE_HOST_OPENJDK_BIN_ARCH_SUPPORTS=y
-# BR2_PACKAGE_PERL is not set
+BR2_PACKAGE_PERL=y
+BR2_PACKAGE_PERL_MODULES=""
+# BR2_PACKAGE_PERL_THREADS is not set
+
+#
+# Perl libraries/modules
+#
+# BR2_PACKAGE_PERL_APACHE_LOGFORMAT_COMPILER is not set
+# BR2_PACKAGE_PERL_APPCONFIG is not set
+# BR2_PACKAGE_PERL_ASTRO_SUNTIME is not set
+# BR2_PACKAGE_PERL_CLASS_INSPECTOR is not set
+# BR2_PACKAGE_PERL_CLASS_LOAD is not set
+# BR2_PACKAGE_PERL_CLASS_METHOD_MODIFIERS is not set
+# BR2_PACKAGE_PERL_CLASS_STD is not set
+# BR2_PACKAGE_PERL_CLASS_STD_FAST is not set
+# BR2_PACKAGE_PERL_CONVERT_ASN1 is not set
+# BR2_PACKAGE_PERL_COOKIE_BAKER is not set
+# BR2_PACKAGE_PERL_CRYPT_BLOWFISH is not set
+# BR2_PACKAGE_PERL_CRYPT_CBC is not set
+# BR2_PACKAGE_PERL_CRYPT_OPENSSL_AES is not set
+# BR2_PACKAGE_PERL_CRYPT_OPENSSL_RANDOM is not set
+# BR2_PACKAGE_PERL_CRYPT_OPENSSL_RSA is not set
+# BR2_PACKAGE_PERL_DATA_DUMP is not set
+# BR2_PACKAGE_PERL_DATA_OPTLIST is not set
+# BR2_PACKAGE_PERL_DATA_UUID is not set
+# BR2_PACKAGE_PERL_DATE_MANIP is not set
+# BR2_PACKAGE_PERL_DATETIME_TINY is not set
+# BR2_PACKAGE_PERL_DBD_MYSQL is not set
+# BR2_PACKAGE_PERL_DBI is not set
+# BR2_PACKAGE_PERL_DEVEL_CYCLE is not set
+# BR2_PACKAGE_PERL_DEVEL_GLOBALDESTRUCTION is not set
+# BR2_PACKAGE_PERL_DEVEL_SIZE is not set
+# BR2_PACKAGE_PERL_DEVEL_STACKTRACE is not set
+# BR2_PACKAGE_PERL_DEVEL_STACKTRACE_ASHTML is not set
+# BR2_PACKAGE_PERL_DEVICE_SERIALPORT is not set
+# BR2_PACKAGE_PERL_DIGEST_HMAC is not set
+# BR2_PACKAGE_PERL_DIGEST_SHA1 is not set
+# BR2_PACKAGE_PERL_DIST_CHECKCONFLICTS is not set
+# BR2_PACKAGE_PERL_ENCODE_DETECT is not set
+# BR2_PACKAGE_PERL_ENCODE_LOCALE is not set
+# BR2_PACKAGE_PERL_EXPORTER_TINY is not set
+# BR2_PACKAGE_PERL_FILE_LISTING is not set
+# BR2_PACKAGE_PERL_FILE_SHAREDIR is not set
+# BR2_PACKAGE_PERL_FILE_SLURP is not set
+# BR2_PACKAGE_PERL_FILE_UTIL is not set
+# BR2_PACKAGE_PERL_FILESYS_NOTIFY_SIMPLE is not set
+# BR2_PACKAGE_PERL_GD is not set
+# BR2_PACKAGE_PERL_GDGRAPH is not set
+# BR2_PACKAGE_PERL_GDTEXTUTIL is not set
+# BR2_PACKAGE_PERL_HASH_MULTIVALUE is not set
+# BR2_PACKAGE_PERL_HTML_PARSER is not set
+# BR2_PACKAGE_PERL_HTML_TAGSET is not set
+# BR2_PACKAGE_PERL_HTTP_COOKIES is not set
+# BR2_PACKAGE_PERL_HTTP_DAEMON is not set
+# BR2_PACKAGE_PERL_HTTP_DATE is not set
+# BR2_PACKAGE_PERL_HTTP_ENTITY_PARSER is not set
+# BR2_PACKAGE_PERL_HTTP_HEADERS_FAST is not set
+# BR2_PACKAGE_PERL_HTTP_MESSAGE is not set
+# BR2_PACKAGE_PERL_HTTP_MULTIPARTPARSER is not set
+# BR2_PACKAGE_PERL_HTTP_NEGOTIATE is not set
+# BR2_PACKAGE_PERL_I18N is not set
+# BR2_PACKAGE_PERL_IO_HTML is not set
+# BR2_PACKAGE_PERL_IO_INTERFACE is not set
+# BR2_PACKAGE_PERL_IO_SOCKET_MULTICAST is not set
+# BR2_PACKAGE_PERL_IO_SOCKET_SSL is not set
+# BR2_PACKAGE_PERL_JSON_MAYBEXS is not set
+# BR2_PACKAGE_PERL_JSON_TINY is not set
+# BR2_PACKAGE_PERL_LIBWWW_PERL is not set
+# BR2_PACKAGE_PERL_LOCALE_MAKETEXT_LEXICON is not set
+# BR2_PACKAGE_PERL_LWP_MEDIATYPES is not set
+# BR2_PACKAGE_PERL_LWP_PROTOCOL_HTTPS is not set
+# BR2_PACKAGE_PERL_MAIL_DKIM is not set
+# BR2_PACKAGE_PERL_MAILTOOLS is not set
+# BR2_PACKAGE_PERL_MATH_INT64 is not set
+# BR2_PACKAGE_PERL_MATH_PRIME_UTIL is not set
+# BR2_PACKAGE_PERL_MIME_BASE64_URLSAFE is not set
+# BR2_PACKAGE_PERL_MIME_TOOLS is not set
+# BR2_PACKAGE_PERL_MODULE_IMPLEMENTATION is not set
+# BR2_PACKAGE_PERL_MODULE_RUNTIME is not set
+# BR2_PACKAGE_PERL_MOJOLICIOUS is not set
+# BR2_PACKAGE_PERL_MOJOLICIOUS_PLUGIN_AUTHENTICATION is not set
+# BR2_PACKAGE_PERL_MOJOLICIOUS_PLUGIN_AUTHORIZATION is not set
+# BR2_PACKAGE_PERL_MOJOLICIOUS_PLUGIN_CSPHEADER is not set
+# BR2_PACKAGE_PERL_MOJOLICIOUS_PLUGIN_I18N is not set
+# BR2_PACKAGE_PERL_MOJOLICIOUS_PLUGIN_SECURITYHEADER is not set
+# BR2_PACKAGE_PERL_MOO is not set
+# BR2_PACKAGE_PERL_MOZILLA_CA is not set
+# BR2_PACKAGE_PERL_NET_DNS is not set
+# BR2_PACKAGE_PERL_NET_HTTP is not set
+# BR2_PACKAGE_PERL_NET_SNMP is not set
+
+#
+# perl-net-ssh2 needs libssh2 with OpenSSL or Libgcrypt backend
+#
+# BR2_PACKAGE_PERL_NET_SSLEAY is not set
+# BR2_PACKAGE_PERL_NET_TELNET is not set
+# BR2_PACKAGE_PERL_NETADDR_IP is not set
+# BR2_PACKAGE_PERL_NUMBER_BYTES_HUMAN is not set
+# BR2_PACKAGE_PERL_PACKAGE_STASH is not set
+# BR2_PACKAGE_PERL_PARAMS_UTIL is not set
+# BR2_PACKAGE_PERL_PARSE_YAPP is not set
+# BR2_PACKAGE_PERL_PATH_TINY is not set
+# BR2_PACKAGE_PERL_PLACK is not set
+# BR2_PACKAGE_PERL_POSIX_STRFTIME_COMPILER is not set
+# BR2_PACKAGE_PERL_ROLE_TINY is not set
+# BR2_PACKAGE_PERL_STREAM_BUFFERED is not set
+# BR2_PACKAGE_PERL_SUB_EXPORTER_PROGRESSIVE is not set
+# BR2_PACKAGE_PERL_SUB_INSTALL is not set
+# BR2_PACKAGE_PERL_SUB_QUOTE is not set
+# BR2_PACKAGE_PERL_SYS_CPU is not set
+# BR2_PACKAGE_PERL_SYS_MEMINFO is not set
+# BR2_PACKAGE_PERL_SYS_MMAP is not set
+# BR2_PACKAGE_PERL_TIME_PARSEDATE is not set
+# BR2_PACKAGE_PERL_TIMEDATE is not set
+# BR2_PACKAGE_PERL_TRY_TINY is not set
+# BR2_PACKAGE_PERL_TYPE_TINY is not set
+# BR2_PACKAGE_PERL_URI is not set
+# BR2_PACKAGE_PERL_WWW_FORM_URLENCODED is not set
+# BR2_PACKAGE_PERL_WWW_ROBOTRULES is not set
+# BR2_PACKAGE_PERL_X10 is not set
+# BR2_PACKAGE_PERL_XML_LIBXML is not set
+# BR2_PACKAGE_PERL_XML_NAMESPACESUPPORT is not set
+# BR2_PACKAGE_PERL_XML_SAX is not set
+# BR2_PACKAGE_PERL_XML_SAX_BASE is not set
 # BR2_PACKAGE_PHP is not set
 
 #
@@ -2507,8 +2573,7 @@ BR2_PACKAGE_PCRE=y
 # BR2_PACKAGE_PCRE2 is not set
 BR2_PACKAGE_POPT=y
 # BR2_PACKAGE_RE2 is not set
-BR2_PACKAGE_READLINE=y
-# BR2_PACKAGE_READLINE_BRACKETED_PASTE is not set
+# BR2_PACKAGE_READLINE is not set
 # BR2_PACKAGE_SLANG is not set
 # BR2_PACKAGE_TCLAP is not set
 # BR2_PACKAGE_UTF8PROC is not set
@@ -2649,7 +2714,6 @@ BR2_PACKAGE_BITCOIN_ARCH_SUPPORTS=y
 # BR2_PACKAGE_DANTE is not set
 # BR2_PACKAGE_DARKHTTPD is not set
 # BR2_PACKAGE_DEHYDRATED is not set
-# BR2_PACKAGE_DHCP is not set
 # BR2_PACKAGE_DHCPCD is not set
 # BR2_PACKAGE_DHCPCD5 is not set
 # BR2_PACKAGE_DHCPDUMP is not set
@@ -2703,11 +2767,8 @@ BR2_PACKAGE_HAPROXY_ARCH_SUPPORTS=y
 #
 # BR2_PACKAGE_IBRDTN_TOOLS is not set
 # BR2_PACKAGE_IBRDTND is not set
-# BR2_PACKAGE_IFENSLAVE is not set
 # BR2_PACKAGE_IFMETRIC is not set
-# BR2_PACKAGE_IFPLUGD is not set
 # BR2_PACKAGE_IFTOP is not set
-# BR2_PACKAGE_IFUPDOWN is not set
 # BR2_PACKAGE_IFUPDOWN_SCRIPTS is not set
 
 #
@@ -2723,7 +2784,6 @@ BR2_PACKAGE_HAPROXY_ARCH_SUPPORTS=y
 #
 # BR2_PACKAGE_INADYN is not set
 # BR2_PACKAGE_IODINE is not set
-# BR2_PACKAGE_IPCALC is not set
 # BR2_PACKAGE_IPERF is not set
 # BR2_PACKAGE_IPERF3 is not set
 # BR2_PACKAGE_IPROUTE2 is not set
@@ -2801,14 +2861,8 @@ BR2_PACKAGE_HAPROXY_ARCH_SUPPORTS=y
 #
 # BR2_PACKAGE_NCFTP is not set
 # BR2_PACKAGE_NDISC6 is not set
-# BR2_PACKAGE_NET_TOOLS is not set
 # BR2_PACKAGE_NETATALK is not set
 # BR2_PACKAGE_NETCALC is not set
-# BR2_PACKAGE_NETCAT is not set
-
-#
-# netcat-openbsd needs a glibc toolchain w/ dynamic library, threads, headers >= 3.12
-#
 # BR2_PACKAGE_NETPLUG is not set
 # BR2_PACKAGE_NETSNMP is not set
 # BR2_PACKAGE_NETSTAT_NAT is not set
@@ -2915,7 +2969,6 @@ BR2_PACKAGE_HAPROXY_ARCH_SUPPORTS=y
 # BR2_PACKAGE_TCPDUMP is not set
 # BR2_PACKAGE_TCPING is not set
 # BR2_PACKAGE_TCPREPLAY is not set
-# BR2_PACKAGE_TFTPD is not set
 # BR2_PACKAGE_THTTPD is not set
 # BR2_PACKAGE_TINC is not set
 
@@ -2959,11 +3012,6 @@ BR2_PACKAGE_HAPROXY_ARCH_SUPPORTS=y
 # BR2_PACKAGE_VSFTPD is not set
 # BR2_PACKAGE_VTUN is not set
 # BR2_PACKAGE_WAVEMON is not set
-
-#
-# wget needs a toolchain w/ wchar
-#
-# BR2_PACKAGE_WHOIS is not set
 # BR2_PACKAGE_WIREGUARD_TOOLS is not set
 # BR2_PACKAGE_WIRELESS_REGDB is not set
 # BR2_PACKAGE_WIRELESS_TOOLS is not set
@@ -3032,7 +3080,6 @@ BR2_PACKAGE_HAPROXY_ARCH_SUPPORTS=y
 #
 # opkg needs a toolchain w/ wchar
 #
-# BR2_PACKAGE_RPM is not set
 
 #
 # Real-Time
@@ -3078,8 +3125,6 @@ BR2_PACKAGE_HAPROXY_ARCH_SUPPORTS=y
 #
 # Shells
 #
-BR2_PACKAGE_BASH=y
-# BR2_PACKAGE_DASH is not set
 # BR2_PACKAGE_MKSH is not set
 # BR2_PACKAGE_ZSH is not set
 
@@ -3087,7 +3132,6 @@ BR2_PACKAGE_BASH=y
 # Utilities
 #
 # BR2_PACKAGE_AT is not set
-# BR2_PACKAGE_BASH_COMPLETION is not set
 # BR2_PACKAGE_CCRYPT is not set
 # BR2_PACKAGE_DIALOG is not set
 # BR2_PACKAGE_DTACH is not set
@@ -3102,7 +3146,6 @@ BR2_PACKAGE_FILE=y
 # logrotate needs a toolchain w/ wchar
 #
 # BR2_PACKAGE_LOGSURFER is not set
-BR2_PACKAGE_NEOFETCH=y
 # BR2_PACKAGE_PDMENU is not set
 # BR2_PACKAGE_PINENTRY is not set
 # BR2_PACKAGE_QPRINT is not set
@@ -3112,16 +3155,13 @@ BR2_PACKAGE_NEOFETCH=y
 #
 # BR2_PACKAGE_RTTY is not set
 BR2_PACKAGE_SCREEN=y
-# BR2_PACKAGE_SCREENFETCH is not set
 BR2_PACKAGE_SUDO=y
-# BR2_PACKAGE_TIME is not set
 # BR2_PACKAGE_TINI is not set
 
 #
 # tmux needs a toolchain w/ wchar, locale
 #
 # BR2_PACKAGE_TTYD is not set
-BR2_PACKAGE_WHICH=y
 # BR2_PACKAGE_XMLSTARLET is not set
 # BR2_PACKAGE_XXHASH is not set
 # BR2_PACKAGE_YTREE is not set
@@ -3146,16 +3186,10 @@ BR2_PACKAGE_WHICH=y
 #
 # circus needs Python 3 and a toolchain w/ C++, threads
 #
-
-#
-# coreutils needs a toolchain w/ wchar
-#
 # BR2_PACKAGE_CPULOAD is not set
 # BR2_PACKAGE_DAEMON is not set
 # BR2_PACKAGE_DC3DD is not set
-# BR2_PACKAGE_DCRON is not set
 # BR2_PACKAGE_DDRESCUE is not set
-# BR2_PACKAGE_DEBIANUTILS is not set
 # BR2_PACKAGE_DOCKER_CLI is not set
 
 #
@@ -3207,15 +3241,13 @@ BR2_PACKAGE_INITSCRIPTS=y
 #
 # netifrc needs openrc as init system
 #
-BR2_PACKAGE_NUMACTL=y
+# BR2_PACKAGE_NUMACTL is not set
 # BR2_PACKAGE_NUT is not set
 
 #
 # pamtester depends on linux-pam
 #
-# BR2_PACKAGE_PROCPS_NG is not set
 # BR2_PACKAGE_PROCRANK_LINUX is not set
-# BR2_PACKAGE_PSMISC is not set
 # BR2_PACKAGE_PWGEN is not set
 
 #
@@ -3226,7 +3258,6 @@ BR2_PACKAGE_NUMACTL=y
 #
 # rauc needs a toolchain w/ wchar, threads
 #
-# BR2_PACKAGE_RSYSLOG is not set
 # BR2_PACKAGE_S6 is not set
 # BR2_PACKAGE_S6_LINUX_INIT is not set
 # BR2_PACKAGE_S6_LINUX_UTILS is not set
@@ -3239,22 +3270,12 @@ BR2_PACKAGE_NUMACTL=y
 # sdbusplus needs systemd and a toolchain w/ C++, gcc >= 7
 #
 # BR2_PACKAGE_SMACK is not set
-# BR2_PACKAGE_START_STOP_DAEMON is not set
 
 #
 # supervisor needs a python interpreter
 #
 # BR2_PACKAGE_SWUPDATE is not set
-# BR2_PACKAGE_SYSKLOGD is not set
-
-#
-# syslog-ng needs a toolchain w/ wchar, threads
-#
 BR2_PACKAGE_SYSTEMD_ARCH_SUPPORTS=y
-
-#
-# tar needs a toolchain w/ wchar
-#
 # BR2_PACKAGE_TPM_TOOLS is not set
 
 #
@@ -3350,7 +3371,6 @@ BR2_PACKAGE_WATCHDOG=y
 #
 BR2_PACKAGE_ED=y
 # BR2_PACKAGE_JOE is not set
-# BR2_PACKAGE_LESS is not set
 
 #
 # mc needs a toolchain w/ threads, wchar
@@ -3362,10 +3382,6 @@ BR2_PACKAGE_ED=y
 # nano needs a toolchain w/ wchar
 #
 # BR2_PACKAGE_UEMACS is not set
-
-#
-# vim needs a toolchain w/ wchar
-#
 
 #
 # Loongson board software
