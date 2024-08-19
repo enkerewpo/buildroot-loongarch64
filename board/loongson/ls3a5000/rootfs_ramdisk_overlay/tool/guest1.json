@@ -3,7 +3,7 @@
     "name": "guest_os_1",
     "zone_id": 5,
     "cpus": [
-        1
+        2
     ],
     "memory_regions": [
         {
@@ -23,11 +23,11 @@
         0
     ],
     "kernel_filepath": "/tool/guest_os_1.bin",
-    "dtb_filepath": "./tool/guest_os_1.bin",
-    "kernel_load_paddr": "0x90001000",
-    "dtb_load_paddr": "0x90000000",
-    "entry_point": "0x900014d4",
-    "arch_config": {
+    "dtb_filepath": "/tool/copy",
+    "kernel_load_paddr": "0xc0001000",
+    "dtb_load_paddr": "0xc0000000",
+    "entry_point": "0x900014f8",
+    "arch_config": { 
         "dummy": "0x1234"
     }
 }

@@ -1,1 +1,0 @@
-hvisor zone start /tool/guest1.json
