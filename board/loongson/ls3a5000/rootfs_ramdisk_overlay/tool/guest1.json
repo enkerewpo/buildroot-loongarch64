@@ -1,0 +1,33 @@
+{
+    "arch": "loongarch64",
+    "name": "guest_os_1",
+    "zone_id": 5,
+    "cpus": [
+        1
+    ],
+    "memory_regions": [
+        {
+            "type": "ram",
+            "physical_start": "0xc0000000",
+            "virtual_start": "0x90000000",
+            "size": "0x800000"
+        },
+        {
+            "type": "io",
+            "physical_start": "0x1fe00000",
+            "virtual_start": "0x1fe00000",
+            "size": "0x1000"
+        }
+    ],
+    "interrupts": [
+        0
+    ],
+    "kernel_filepath": "/tool/guest_os_1.bin",
+    "dtb_filepath": "./tool/guest_os_1.bin",
+    "kernel_load_paddr": "0x90001000",
+    "dtb_load_paddr": "0x90000000",
+    "entry_point": "0x900014d4",
+    "arch_config": {
+        "dummy": "0x1234"
+    }
+}
