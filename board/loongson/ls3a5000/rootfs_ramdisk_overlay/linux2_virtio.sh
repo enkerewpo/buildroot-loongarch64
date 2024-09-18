@@ -5,5 +5,9 @@ if [ ! -e /dev/hvisor ]; then
 fi
 
 echo "Starting linux2 with virtio..."
-hvisor zone start /tool/linux2.json
+# hvisor zone start /tool/linux2.json
+
+cd tool
+nohup ./hvisor virtio start virtio_cfg.json &
+
 sudo poweroff

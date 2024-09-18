@@ -1,0 +1,12 @@
+{
+    "devices": [
+        {
+            "type": "console",
+            "addr": "0x10001000",
+            "len": "0x200",
+            "irq": 1,
+            "zone_id": 6,
+            "status": "enable"
+        }
+    ]
+}
