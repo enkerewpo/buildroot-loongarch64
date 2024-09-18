@@ -23,6 +23,12 @@
             "physical_start": "0x1fe00000",
             "virtual_start": "0x1fe00000",
             "size": "0x1000"
+        },
+        {
+            "type": "virtio",
+            "physical_start": "0x10001000",
+            "virtual_start": "0x10001000",
+            "size": "0x200"
         }
     ],
     "interrupts": [
