@@ -19,18 +19,6 @@
             "size": "0x10000000"
         },
         {
-            "type": "ram",
-            "physical_start": "0xe00f0000",
-            "virtual_start": "0xf0000",
-            "size": "0x10000"
-        },
-        {
-            "type": "ram",
-            "physical_start": "0xe0010000",
-            "virtual_start": "0x10000",
-            "size": "0x10000"
-        },
-        {
             "type": "io",
             "physical_start": "0x1fe00000",
             "virtual_start": "0x1fe00000",
@@ -42,8 +30,8 @@
     ],
     "kernel_filepath": "/tool/vmlinux.bin",
     "dtb_filepath": "/tool/copy",
-    "kernel_load_paddr": "0xc0020000",
-    "dtb_load_paddr": "0xc0000000",
+    "kernel_load_paddr": "0xc0200000",
+    "dtb_load_paddr": "0xc0001000",
     "entry_point": "0x9000000000cb5000",
     "arch_config": {
         "dummy": "0x1234"

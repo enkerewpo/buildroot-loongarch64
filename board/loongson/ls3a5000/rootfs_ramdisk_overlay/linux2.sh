@@ -6,3 +6,4 @@ fi
 
 echo "Starting linux2..."
 hvisor zone start /tool/linux2.json
+sudo poweroff
