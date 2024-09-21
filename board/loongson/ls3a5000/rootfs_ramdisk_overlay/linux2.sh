@@ -4,6 +4,6 @@ if [ ! -e /dev/hvisor ]; then
     /install.sh
 fi
 
-echo "Starting linux2..."
+echo "booting zone linux2..."
 hvisor zone start /tool/linux2.json
 sudo poweroff

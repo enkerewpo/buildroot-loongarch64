@@ -4,8 +4,4 @@ if [ ! -e /dev/hvisor ]; then
     /install.sh
 fi
 
-echo "booting zone linux2 with virtio..."
-
-hvisor zone start /tool/linux2.json
-
-# sudo poweroff
+nohup hvisor virtio start /tool/virtio_cfg.json &

@@ -38,7 +38,7 @@
     "dtb_filepath": "/tool/copy",
     "kernel_load_paddr": "0xc0200000",
     "dtb_load_paddr": "0xc0001000",
-    "entry_point": "0x9000000000cb5000",
+    "entry_point": "0x9000000000cba000",
     "arch_config": {
         "dummy": "0x1234"
     }
