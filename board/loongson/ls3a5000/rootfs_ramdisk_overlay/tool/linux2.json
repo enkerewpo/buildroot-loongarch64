@@ -1,7 +1,7 @@
 {
     "arch": "loongarch64",
     "name": "linux2",
-    "zone_id": 6,
+    "zone_id": 3,
     "cpus": [
         3
     ],
