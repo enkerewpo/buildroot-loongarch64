@@ -7,4 +7,4 @@ fi
 nohup hvisor virtio start /tool/virtio_cfg.json &
 
 # spawn a process to monitor nohup.out
-/mon.sh &
+# /mon.sh &
