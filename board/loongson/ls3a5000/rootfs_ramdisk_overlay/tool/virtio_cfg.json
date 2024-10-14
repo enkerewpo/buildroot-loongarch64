@@ -2,7 +2,18 @@
     "zones": [
         {
             "id": 3,
-            "memory_region": ["0xc0000000", "0x30000000"],
+            "memory_region": [
+                {
+                    "zone0_ipa": "0xc0000000",
+                    "zonex_ipa": "0x00000000",
+                    "size": "0x10000000"
+                },
+                {
+                    "zone0_ipa": "0xd0000000",
+                    "zonex_ipa": "0x90000000",
+                    "size": "0x10000000"
+                }
+            ],
             "devices": [
                     {
                         "type": "console",
