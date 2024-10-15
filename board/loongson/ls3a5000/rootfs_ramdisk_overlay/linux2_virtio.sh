@@ -7,5 +7,3 @@ fi
 echo "booting zone linux2 with virtio..."
 
 hvisor zone start /tool/linux2.json
-
-# sudo poweroff

@@ -11,15 +11,15 @@ fi
 export EDITOR='/bin/vi'
 
 # Source configuration files from /etc/profile.d
-for i in /etc/profile.d/*.sh ; do
-	if [ -r "$i" ]; then
-		. $i
-	fi
-done
-unset i
+# for i in /etc/profile.d/*.sh ; do
+# 	if [ -r "$i" ]; then
+# 		. $i
+# 	fi
+# done
+# unset i
 
-sleep 2
-echo "Processing /etc/profile..."
+# sleep 2
+# echo "Processing /etc/profile..."
 # echo "we will run three script symbol three stage"
 # echo "some stage will waste a few minutes. don't shutdowm until finish!"
 # /home/handle_judge.sh | tee /dev/tty0
@@ -28,3 +28,4 @@ YELLOW_END="\033[0m"
 BOLD_START="\033[1m"
 BOLD_END="\033[0m"
 echo -e "${YELLOW_START}${BOLD_START}Welcome to hvisor(loongarch) root linux! Buildroot/wheatfox 2024${BOLD_END}${YELLOW_END}"
+
