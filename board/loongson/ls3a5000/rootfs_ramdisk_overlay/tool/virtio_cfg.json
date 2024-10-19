@@ -19,7 +19,7 @@
                         "type": "console",
                         "addr": "0x10001000",
                         "len": "0x200",
-                        "irq": 76,
+                        "irq": 4,
                         "status": "enable"
                     }
                 ]
