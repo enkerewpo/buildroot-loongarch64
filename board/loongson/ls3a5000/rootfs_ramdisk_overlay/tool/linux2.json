@@ -35,9 +35,9 @@
         4
     ],
     "kernel_filepath": "/tool/vmlinux.bin",
-    "dtb_filepath": "/tool/copy",
+    "dtb_filepath": "/tool/test.bin",
     "kernel_load_paddr": "0xc0200000",
-    "dtb_load_paddr": "0xc0001000",
+    "dtb_load_paddr": "0xc0000000",
     "entry_point": "0x9000000000e51000",
     "arch_config": {
         "dummy": "0x1234"
