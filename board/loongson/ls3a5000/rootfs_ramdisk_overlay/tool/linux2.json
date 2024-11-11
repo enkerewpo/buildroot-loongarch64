@@ -38,7 +38,7 @@
     "dtb_filepath": "/tool/test.bin",
     "kernel_load_paddr": "0xc0200000",
     "dtb_load_paddr": "0xc0000000",
-    "entry_point": "0x9000000000e51000",
+    "entry_point": "0x9000000000e76000",
     "arch_config": {
         "dummy": "0x1234"
     }
