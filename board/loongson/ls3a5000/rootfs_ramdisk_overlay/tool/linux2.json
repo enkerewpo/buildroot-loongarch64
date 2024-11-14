@@ -26,8 +26,8 @@
         },
         {
             "type": "virtio",
-            "physical_start": "0x10001000",
-            "virtual_start": "0x10001000",
+            "physical_start": "0x30001000",
+            "virtual_start": "0x30001000",
             "size": "0x200"
         }
     ],
@@ -38,7 +38,7 @@
     "dtb_filepath": "/tool/test.bin",
     "kernel_load_paddr": "0xc0200000",
     "dtb_load_paddr": "0xc0000000",
-    "entry_point": "0x9000000000e76000",
+    "entry_point": "0x9000000000e75000",
     "arch_config": {
         "dummy": "0x1234"
     }
