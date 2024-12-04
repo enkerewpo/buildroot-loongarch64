@@ -1,31 +1,45 @@
-# loongvisor(hvisor) linux vm rootfs port
+# hvisor linux vm rootfs port
 
 wheatfox 2024.3.12
 
 ---
 
-请注意，本git repo没有包含根目录的dl文件夹（里面包括rootfs内程序的源码压缩包，大小为2G，请手动从buildroot-2021.src.b5c2bd4-build.20230718090721.tar.gz中解压得到dl文件夹并放置在本目录）
+## Build Instructions for 3A5000 hvisor Rootfs
 
-本代码来自龙芯公司对2K1000板卡的buildroot适配，对3A5000的适配将会在本仓库进行代码更新，用于loongvisor(hvisor)启动linux虚拟机时挂载一个简单的rootfs
+**Note**: This Git repository does not include the `dl` folder in the root directory (which contains compressed source code packages for programs in the rootfs, approximately 2 GB in size). You can let buildroot automatically download them or use the ones I uploaded to baiducloud(not full sources but enough for my defconfig):
 
-GCC: loongarch64-unknown-linux-gnu-gcc. PLEASE USE https://github.com/sunhaiyong1978/CLFS-for-LoongArch/releases/download/8.0/loongarch64-clfs-8.0-cross-tools-gcc-full.tar.xz !
+[https://pan.baidu.com/s/1sVPRt0JiExUxFm2QiCL_nA?pwd=la64](https://pan.baidu.com/s/1sVPRt0JiExUxFm2QiCL_nA?pwd=la64)
 
-this CLFS's target linux kernel header version is v6.2
+This code is based on Loongson's buildroot adaptation for the 2K1000 board. Updates for 3A5000 adaptation will be made in this repository, intended for mounting a simple rootfs when launching a Linux virtual machine using **hvisor**.
 
-build rootfs for 3A5000 loongvisor:
+### GCC Requirement
+
+Please use:   `loongarch64-unknown-linux-gnu-gcc`  . Download it here: [https://github.com/sunhaiyong1978/CLFS-for-LoongArch/releases/download/8.0/loongarch64-clfs-8.0-cross-tools-gcc-full.tar.xz](https://github.com/sunhaiyong1978/CLFS-for-LoongArch/releases/download/8.0/loongarch64-clfs-8.0-cross-tools-gcc-full.tar.xz)
+
+### Building the rootfs for 3A5000 hvisor
 
 ```bash
 make loongson3a5000_hvisor_defconfig
 
-# you can change the gcc path to your own by entering menuconfig and change toolchain settingsd /
-make menuconfig # this will modified .config file which is the real config to use when running make
+# You can change the GCC path to your own by entering menuconfig and adjusting toolchain settings.
+make menuconfig # This modifies the .config file, which is the actual configuration used during the build process.
 
-make -j8 # build the rootfs
+make -j8 # Build the rootfs
 ```
 
-TIPS:
+### Build-Time Logging and Configuration Tips
 
-1. output/build/build-time.log中实时打印当前正在编译哪个工具
+#### Monitoring Build Progress
+The file `output/build/build-time.log` shows which tool is currently being compiled in real-time. Use this file to monitor the build process.
+
+#### Configuration Updates Before Building
+
+Before starting the build process, modify the `.config` file or directly edit `loongson3a5000_hvisor_defconfig` to ensure the toolchain paths and settings are correctly configured.
+
+Update the following fields to match the location and name of your local toolchain:
+
+- **`BR2_TOOLCHAIN_EXTERNAL_PATH`**  
+- **Compiler Prefix**
 
 ---
 
@@ -55,90 +69,3 @@ You can also find us on #buildroot on OFTC IRC.
 
 If you would like to contribute patches, please read
 https://buildroot.org/manual.html#submitting-patches
-
-以上是buildroot官方的README内容
-
-下面将是广东龙芯针对buildroot做出的修改而修订的README内容
-
-此份buildroot源码包括以下**功能的修改/新增：**
-
-* 添加广东龙芯系列板卡的文件系统编译配置
-* 添加对LoongArch64的架构的支持
-* 添加部分源码包的编译(minigui环境支持、lvgl环境支持等)
-* 添加龙芯嵌入式测试软件的包
-* 添加龙芯SSD下的文件系统部署所用到的ramdisk编译支持
-
-本源码需要在x86上的linux环境下编译
-推荐编译条件为:
-
-| 环境           |       推荐       |
-| -------------  | ---------------- |
-| 操作系统       | ubuntu 18.04     |
-| 交叉编译工具链 | loongarch64: toolchain-loongarch64-linux-gnu-gcc8-host-x86_64-2022-07-18</br>mips64el:mips64el-linux-gcc-8.x</br>部署于/opt下，可从资料包中获取 |
-| 硬盘容量       | 需要预留**20G或以上的空间**给buildroot存放编译中间文件 |
-| 运行机器       | x86 机器，建议为多核，推荐在服务器上编译，个人电脑编译时间较长且占用大量空间 |
-
-关于依赖环境，可以参考下面的命令进行安装，如果还是存在不能编译的情况，还请按照实际情况进行依赖环境的准备。
-```
-sudo apt -y install make git gcc g++ bison flex libncurses5-dev libssl-dev libelf-dev
-sudo apt -y install cmake tree build-essential tcl-dev automake libtool
-```
-
-通过上述的官方说明可以清楚编译的流程是：
-
-1. 生效要编译的配置(make XXX_defconfig)
-2. make -j24 (-j24 指调用多少cpu核进行编译，根据实际的cpu核数而定，也可以只是make)
-3. 前往./output/image 文件夹得到产出的文件系统进行文件
-
-编译产出的文件为文件系统的镜像文件
-可用的是rootfs.tar.gz 和 rootfs.ubi
-
-| 文件           |       说明       |
-| -------------  | ---------------- |
-| rootfs.tar.gz  | ssd要用的文件系统镜像     |
-| rootfs.ubi     | nand要用的文件系统镜像，根据龙芯板卡的烧录规则，还需要**改名为rootfs-ubifs-ze.img** |
-
-关于如何定制buildroot的内容本处不再赘述，可以查看用户手册的 **12.2.1.1. buildroot简述** 一节，当然还推荐直接查阅官方手册。
-
-编译产出的系统分为以下几种
-
-| 系统类型        | 说明                   |
-| --------------- | ---------------------  |
-| 全量系统        | 和用户手册中说的busybox系统是一个概念，集成了相当部分的软件包 |
-| 小型系统        | 只保留部分软件包，例如可用于外围电路测试软件，网络测试软件的系统，可用于验证板卡功能 |
-| ramdisk         | 和广东龙芯板卡相关的SSD中系统的安装引导系统的构建</br>本质是一个busybox系统启动时运行安装系统的程序 |
-| 快速启动系统    | 和全量系统一致，但是改为busybox启动，同时第一次启动之后的启动都会不启动其他服务</br>为了加快从内核到文件系统的速度</br>实测在ls2k500，如果busybox启动下，全部服务启动则需要4s，禁用服务之后，只需要1.8s </br> 如果想恢复服务，那么请把/root/init.d-bak里面的内容复制到/etc/init.d即可 |
-
-
-全量系统的编译配置
-
-| 板卡配置名                                   | 对应适用板卡           |
-| -------------------------------------------- | ---------------------  |
-| loongson2k1000_jinlong_defconfig             | ls2k1000mips版本的金龙板卡<br>或者其他ls2k1000mips版本的板卡<br>通用配置（以后可能改名） |
-| loongson2k1000_LA_jinlong_defconfig          | ls2k1000LA版本的金龙板卡<br>或者其他ls2k1000LA版本的板卡<br>通用配置（以后可能改名） |
-| loongson2k500_defconfig                      | ls2k500的板卡<br>通用配置（串口2作为调试串口） |
-| loongson2k500_mini_dp_defconfig              | ls2k500的mini开发板卡<br>通用配置（串口2作为调试串口） |
-
-小型系统的编译配置
-
-| 板卡配置名                                   | 对应适用板卡           |
-| -------------------------------------------- | ---------------------  |
-| loongson2k1000_jinlong_mini_defconfig        | ls2k1000mips版本的金龙板卡<br>或者其他ls2k1000mips版本的板卡<br>小型系统通用配置（以后可能改名） |
-| loongson2k1000_LA_jinlong_mini_defconfig     | ls2k1000LA版本的金龙板卡<br>或者其他ls2k1000LA版本的板卡<br>小型系统通用配置（以后可能改名） |
-| loongson2k500_mini_defconfig                 | ls2k500的板卡<br>小型系统通用配置（串口2作为调试串口） |
-| loongson2k500_mini_dp_mini_defconfig         | ls2k500的mini开发板卡<br>小型系统通用配置（串口2作为调试串口） |
-
-ramdisk的编译配置
-
-| 板卡配置名                                   | 对应适用板卡           |
-| -------------------------------------------- | ---------------------  |
-| loongson2k1000_LA_jinlong_ramdisk_defconfig  | ls2k1000LA版本的金龙板卡<br>或者其他ls2k1000LA版本的板卡<br>ramdisk编译通用配置（以后可能改名） |
-| loongson2k500_ramdisk_defconfig              | ls2k500的板卡<br>ramdisk编译通用配置（串口2作为调试串口） |
-
-快速启动系统的编译配置
-
-| 板卡配置名                                   | 对应适用板卡           |
-| -------------------------------------------- | ---------------------  |
-| loongson2k1000_LA_jinlong_fastboot_defconfig | ls2k1000LA版本的金龙板卡<br>或者其他ls2k1000LA版本的板卡<br>快速启动系统通用配置（以后可能改名） |
-| loongson2k500_fastboot_defconfig             | ls2k500的板卡<br>快速启动系统通用配置（串口2作为调试串口） |
-| loongson2k500_mini_dp_fastboot_defconfig     | ls2k500的mini开发板卡<br>快速启动系统通用配置（串口2作为调试串口） |

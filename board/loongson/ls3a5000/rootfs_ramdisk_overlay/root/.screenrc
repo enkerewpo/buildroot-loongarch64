@@ -1,0 +1,5 @@
+split -v
+focus
+screen bash
+focus
+screen /dev/pts/0
