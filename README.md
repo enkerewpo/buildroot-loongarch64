@@ -20,10 +20,10 @@ Please use:   `loongarch64-unknown-linux-gnu-gcc`  . Download it here: [https://
 
 ```bash
 make loongson3a5000_hvisor_defconfig
-
-# You can change the GCC path to your own by entering menuconfig and adjusting toolchain settings.
-make menuconfig # This modifies the .config file, which is the actual configuration used during the build process.
-
+# You can change the GCC path to your own by
+# entering menuconfig and adjusting toolchain settings.
+make menuconfig # This modifies the .config file
+# which is the actual configuration used during the build process.
 make -j8 # Build the rootfs
 ```
 
