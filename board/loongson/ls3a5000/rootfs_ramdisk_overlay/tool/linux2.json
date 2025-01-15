@@ -34,6 +34,8 @@
     "interrupts": [
         4
     ],
+    "ivc_configs": [],
+    "kernel_args": "NOT_USED_YET",
     "kernel_filepath": "/tool/vmlinux.bin",
     "dtb_filepath": "/tool/test.bin",
     "kernel_load_paddr": "0xc0200000",
