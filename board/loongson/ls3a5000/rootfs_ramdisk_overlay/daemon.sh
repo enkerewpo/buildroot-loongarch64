@@ -7,6 +7,8 @@ fi
 mkdir -p /dev/pts
 mount -t devpts devpts /dev/pts
 
+cp -r libdrm-install/lib/* /lib64/
+
 nohup hvisor virtio start /tool/virtio_cfg.json &
 
 # spawn a process to monitor nohup.out

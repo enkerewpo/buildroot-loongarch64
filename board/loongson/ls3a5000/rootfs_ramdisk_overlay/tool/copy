@@ -1,2 +1,0 @@
-cp /home/wheatfox/Documents/Code/hvisor-tool/tools/hvisor hvisor
-cp /home/wheatfox/Documents/Code/hvisor-tool/driver/hvisor.ko hvisor.ko
