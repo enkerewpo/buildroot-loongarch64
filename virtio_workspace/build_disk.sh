@@ -19,7 +19,7 @@ build_ext4() {
     # 4. unmount the temp dir
 
     sudo rm -f "$disk_name"
-    sudo dd if=/dev/zero of="$disk_name" bs=1M count=64
+    sudo dd if=/dev/zero of="$disk_name" bs=1M count=8
     sudo mkfs.ext4 "$disk_name"
     local temp_dir=$(mktemp -d)
     sudo mount "$disk_name" "$temp_dir"
