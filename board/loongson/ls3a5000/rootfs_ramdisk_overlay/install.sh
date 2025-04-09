@@ -1,4 +1,4 @@
 cd tool
 insmod ./hvisor.ko
 cp ./hvisor /bin
-echo "successfully installed hvisor, goodbye"
+echo "successfully installed hvisor"
