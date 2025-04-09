@@ -31,14 +31,26 @@
             "size": "0x200"
         },
         {
+            "type": "virtio",
+            "physical_start": "0x30002000",
+            "virtual_start": "0x30002000",
+            "size": "0x200"
+        },
+        {
             "type": "io",
             "physical_start": "0xffffffff0000",
             "virtual_start": "0xffffffff0000",
             "size": "0x1000"
+        },
+        {
+            "type": "io",
+            "physical_start": "0x10000000",
+            "virtual_start": "0x10000000",
+            "size": "0x1000"
         }
     ],
     "interrupts": [
-        4
+        4, 5
     ],
     "ivc_configs": [],
     "kernel_args": "NOT_USED_YET",

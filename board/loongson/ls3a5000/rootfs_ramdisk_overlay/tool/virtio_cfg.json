@@ -21,6 +21,14 @@
                         "len": "0x200",
                         "irq": 4,
                         "status": "enable"
+                    },
+                    {
+                        "type": "blk",
+                        "addr": "0x30002000",
+                        "len": "0x200",
+                        "irq": 5,
+                        "img": "/tool/linux2-disk.ext4",
+                        "status": "enable"
                     }
                 ]
         }
