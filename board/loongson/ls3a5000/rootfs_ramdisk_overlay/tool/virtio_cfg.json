@@ -1,7 +1,7 @@
 {
     "zones": [
         {
-            "id": 3,
+            "id": 2,
             "memory_region": [
                 {
                     "zone0_ipa": "0xc0000000",
@@ -20,6 +20,14 @@
                         "addr": "0x30001000",
                         "len": "0x200",
                         "irq": 4,
+                        "status": "enable"
+                    },
+                    {
+                        "type": "blk",
+                        "addr": "0x30002000",
+                        "len": "0x200",
+                        "irq": 5,
+                        "img": "/tool/linux2-disk.ext4",
                         "status": "enable"
                     }
                 ]
