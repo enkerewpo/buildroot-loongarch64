@@ -32,12 +32,6 @@
         },
         {
             "type": "virtio",
-            "physical_start": "0x30001000",
-            "virtual_start": "0x30001000",
-            "size": "0x200"
-        },
-        {
-            "type": "virtio",
             "physical_start": "0x30002000",
             "virtual_start": "0x30002000",
             "size": "0x200"
