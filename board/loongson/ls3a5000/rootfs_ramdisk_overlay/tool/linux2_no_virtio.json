@@ -22,7 +22,7 @@
             "type": "io",
             "physical_start": "0x1fe00000",
             "virtual_start": "0x1fe00000",
-            "size": "0x2000"
+            "size": "0x1000"
         },
         {
             "type": "io",
@@ -41,6 +41,36 @@
             "physical_start": "0x10000000",
             "virtual_start": "0x10000000",
             "size": "0x1000"
+        },
+        {
+            "type": "io",
+            "physical_start": "0x100d0000",
+            "virtual_start": "0x100d0000",
+            "size": "0x1000"
+        },
+        {
+            "type": "io",
+            "physical_start": "0xefe00000000",
+            "virtual_start": "0xfe00000000",
+            "size": "0x20000000"
+        },
+        {
+            "type": "io",
+            "physical_start": "0x18408000",
+            "virtual_start": "0x18408000",
+            "size": "0x00008000"
+        },
+        {
+            "type": "io",
+            "physical_start": "0x60000000",
+            "virtual_start": "0x60000000",
+            "size": "0x20000000"
+        },
+        {
+            "type": "io",
+            "physical_start": "0x10010000",
+            "virtual_start": "0x10010000",
+            "size": "0x00010000"
         }
     ],
     "interrupts": [
@@ -52,7 +82,7 @@
     "dtb_filepath": "/tool/test.bin",
     "kernel_load_paddr": "0xc0200000",
     "dtb_load_paddr": "0xc0000000",
-    "entry_point": "0x9000000000e4c000",
+    "entry_point": "0x9000000000e13000",
     "arch_config": {
         "dummy": "0x1234"
     }
