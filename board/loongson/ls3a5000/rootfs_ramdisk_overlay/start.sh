@@ -1,16 +1,13 @@
 #!/bin/bash
 
 USE_SCREEN=0
-CONFIG_FILE="/tool/linux2.json"
+LINUX_ID=2 # Default to linux2
 
 show_usage() {
-    echo "Usage: $0 [-s] [config]"
+    echo "Usage: $0 [-s] [id]"
     echo "  -s        - Use screen for console"
-    echo "  config    - Configuration to use:"
-    echo "              no_virtio - Use configuration without virtio devices"
-    echo "              console   - Use configuration with console"
-    echo "              blk       - Use configuration with block device"
-    echo "              default   - Use default configuration (with virtio devices)"
+    echo "  id        - Linux instance to start (1, 2, or 3)"
+    echo "              Default: 1"
     exit 1
 }
 
@@ -25,29 +22,20 @@ while getopts "s" opt; do
     esac
 done
 
-# Check if a configuration parameter is provided
+# Check if a Linux ID is provided
 if [ $# -gt 0 ]; then
-    case "$1" in
-        "no_virtio")
-            CONFIG_FILE="/tool/linux2_no_virtio.json"
-            ;;
-        "console")
-            CONFIG_FILE="/tool/linux2_console.json"
-            ;;
-        "blk")
-            CONFIG_FILE="/tool/linux2_blk.json"
-            ;;
-        "default")
-            CONFIG_FILE="/tool/linux2.json"
+    # Skip the -s option if it was used
+    if [ "$1" != "-s" ]; then
+        case "$1" in
+        "1" | "2" | "3")
+            LINUX_ID=$1
             ;;
         *)
-            # Skip the -s option if it was used
-            if [ "$1" != "-s" ]; then
-                echo "Unknown configuration: $1"
-                show_usage
-            fi
+            echo "Invalid Linux ID: $1"
+            show_usage
             ;;
-    esac
+        esac
+    fi
 fi
 
 if [ ! -e /dev/hvisor ]; then
@@ -55,7 +43,8 @@ if [ ! -e /dev/hvisor ]; then
     /install.sh
 fi
 
-echo "booting zone linux2 with configuration: $CONFIG_FILE"
+CONFIG_FILE="/tool/linux${LINUX_ID}.json"
+echo "booting zone linux${LINUX_ID} with configuration: $CONFIG_FILE"
 hvisor zone start "$CONFIG_FILE"
 
 if [ $USE_SCREEN -eq 1 ]; then

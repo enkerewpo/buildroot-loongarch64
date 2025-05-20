@@ -1,3 +1,4 @@
 hvisor*
 *.bin
 !test.bin
+nonroot_build_timestamp.txt

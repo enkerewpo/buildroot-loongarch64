@@ -8,13 +8,13 @@
     "memory_regions": [
         {
             "type": "ram",
-            "physical_start": "0xc0000000",
+            "physical_start": "0x40000000",
             "virtual_start": "0x00000000",
             "size": "0x10000000"
         },
         {
             "type": "ram",
-            "physical_start": "0xd0000000",
+            "physical_start": "0x50000000",
             "virtual_start": "0x90000000",
             "size": "0x10000000"
         },
@@ -92,8 +92,8 @@
     "kernel_args": "NOT_USED_YET",
     "kernel_filepath": "/tool/vmlinux.bin",
     "dtb_filepath": "/tool/test.bin",
-    "kernel_load_paddr": "0xc0200000",
-    "dtb_load_paddr": "0xc0000000",
+    "kernel_load_paddr": "0x40200000",
+    "dtb_load_paddr": "0x40000000",
     "entry_point": "0x9000000000e13000",
     "arch_config": {
         "dummy": "0x1234"
