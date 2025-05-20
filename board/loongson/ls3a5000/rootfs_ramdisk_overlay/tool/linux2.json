@@ -9,7 +9,7 @@
         {
             "type": "ram",
             "physical_start": "0xc0000000",
-            "virtual_start": "0x00000000",
+            "virtual_start": "0xc0000000",
             "size": "0x10000000"
         },
         {
@@ -47,6 +47,36 @@
             "physical_start": "0x10000000",
             "virtual_start": "0x10000000",
             "size": "0x1000"
+        },
+        {
+            "type": "io",
+            "physical_start": "0x10010000",
+            "virtual_start": "0x10010000",
+            "size": "0x1000"
+        },
+        {
+            "type": "io",
+            "physical_start": "0xefe00000000",
+            "virtual_start": "0xfe00000000",
+            "size": "0x20000000"
+        },
+        {
+            "type": "io",
+            "physical_start": "0x18408000",
+            "virtual_start": "0x18408000",
+            "size": "0x8000"
+        },
+        {
+            "type": "io",
+            "physical_start": "0x60000000",
+            "virtual_start": "0x60000000",
+            "size": "0x20000000"
+        },
+        {
+            "type": "io",
+            "physical_start": "0x10080000",
+            "virtual_start": "0x10080000",
+            "size": "0x1000"
         }
     ],
     "interrupts": [
@@ -58,7 +88,7 @@
     "dtb_filepath": "/tool/test.bin",
     "kernel_load_paddr": "0xc0200000",
     "dtb_load_paddr": "0xc0000000",
-    "entry_point": "0x9000000000e75000",
+    "entry_point": "0x90000000c0e4c000",
     "arch_config": {
         "dummy": "0x1234"
     },
@@ -75,6 +105,9 @@
         "mem64_size": "0x20000000",
         "pci_mem64_base": "0x60000000"
     },
-    "num_pci_devs": 9,
-    "alloc_pci_devs": [72, 80, 88, 96, 104, 120, 128, 152, 2051]
+    "num_pci_devs": 4,
+    "alloc_pci_devs": [0, 8, 16, 32]
 }
+
+
+
