@@ -103,7 +103,7 @@
     ],
     "ivc_configs": [],
     "kernel_args": "NOT_USED_YET",
-    "kernel_filepath": "/tool/vmlinux-linux1.bin",
+    "kernel_filepath": "/tool/nonroot/vmlinux-linux1.bin",
     "dtb_filepath": "/tool/test.bin",
     "kernel_load_paddr": "0xc0200000",
     "dtb_load_paddr": "0xc0000000",
