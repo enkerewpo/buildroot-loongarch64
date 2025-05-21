@@ -9,13 +9,13 @@
         {
             "type": "ram",
             "physical_start": "0x40000000",
-            "virtual_start": "0x00000000",
+            "virtual_start": "0x40000000",
             "size": "0x10000000"
         },
         {
             "type": "ram",
             "physical_start": "0x50000000",
-            "virtual_start": "0x90000000",
+            "virtual_start": "0x50000000",
             "size": "0x10000000"
         },
         {
@@ -90,11 +90,11 @@
     ],
     "ivc_configs": [],
     "kernel_args": "NOT_USED_YET",
-    "kernel_filepath": "/tool/vmlinux.bin",
+    "kernel_filepath": "/tool/vmlinux-linux2.bin",
     "dtb_filepath": "/tool/test.bin",
     "kernel_load_paddr": "0x40200000",
     "dtb_load_paddr": "0x40000000",
-    "entry_point": "0x9000000000e13000",
+    "entry_point": "0x9000000040e13000",
     "arch_config": {
         "dummy": "0x1234"
     }
