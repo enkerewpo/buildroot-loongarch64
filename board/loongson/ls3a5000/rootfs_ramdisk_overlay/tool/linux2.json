@@ -8,14 +8,14 @@
     "memory_regions": [
         {
             "type": "ram",
-            "physical_start": "0x40000000",
-            "virtual_start": "0x40000000",
+            "physical_start": "0xa0000000",
+            "virtual_start": "0xa0000000",
             "size": "0x10000000"
         },
         {
             "type": "ram",
-            "physical_start": "0x50000000",
-            "virtual_start": "0x50000000",
+            "physical_start": "0xb0000000",
+            "virtual_start": "0xb0000000",
             "size": "0x10000000"
         },
         {
@@ -83,18 +83,31 @@
             "physical_start": "0x10010000",
             "virtual_start": "0x10010000",
             "size": "0x00010000"
+        },
+        {
+            "type": "ram",
+            "physical_start": "0x1000",
+            "virtual_start": "0x0",
+            "size": "0x10000"
+        },
+        {
+            "type": "ram",
+            "physical_start": "0xf0000",
+            "virtual_start": "0xf0000",
+            "size": "0x10000"
         }
     ],
     "interrupts": [
-        4, 5
+        4,
+        5
     ],
     "ivc_configs": [],
     "kernel_args": "NOT_USED_YET",
     "kernel_filepath": "/tool/nonroot/vmlinux-linux2.bin",
     "dtb_filepath": "/tool/test.bin",
-    "kernel_load_paddr": "0x40200000",
-    "dtb_load_paddr": "0x40000000",
-    "entry_point": "0x9000000040e13000",
+    "kernel_load_paddr": "0xa0200000",
+    "dtb_load_paddr": "0xa0000000",
+    "entry_point": "0x90000000a0e13000",
     "arch_config": {
         "dummy": "0x1234"
     }
