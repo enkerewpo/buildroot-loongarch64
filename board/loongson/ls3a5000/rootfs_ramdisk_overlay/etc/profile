@@ -27,5 +27,5 @@ YELLOW_START="\033[33m"
 YELLOW_END="\033[0m"
 BOLD_START="\033[1m"
 BOLD_END="\033[0m"
-echo -e "${YELLOW_START}${BOLD_START}Welcome to hvisor(loongarch) root linux! Buildroot/wheatfox 2024${BOLD_END}${YELLOW_END}"
+echo -e "${YELLOW_START}${BOLD_START}Welcome to hvisor(loongarch) root linux! Buildroot/wheatfox 2025${BOLD_END}${YELLOW_END}"
 

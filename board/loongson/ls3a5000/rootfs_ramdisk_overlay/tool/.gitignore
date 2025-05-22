@@ -1,3 +1,4 @@
 hvisor*
 *.bin
 !test.bin
+*build_timestamp.txt

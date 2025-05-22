@@ -8,21 +8,27 @@
     "memory_regions": [
         {
             "type": "ram",
-            "physical_start": "0xc0000000",
-            "virtual_start": "0xc0000000",
+            "physical_start": "0xa0000000",
+            "virtual_start": "0xa0000000",
             "size": "0x10000000"
         },
         {
             "type": "ram",
-            "physical_start": "0xd0000000",
-            "virtual_start": "0x90000000",
+            "physical_start": "0xb0000000",
+            "virtual_start": "0xb0000000",
             "size": "0x10000000"
         },
         {
             "type": "io",
             "physical_start": "0x1fe00000",
             "virtual_start": "0x1fe00000",
-            "size": "0x4000"
+            "size": "0x1000"
+        },
+        {
+            "type": "io",
+            "physical_start": "0x10080000",
+            "virtual_start": "0x10080000",
+            "size": "0x1000"
         },
         {
             "type": "virtio",
@@ -50,8 +56,8 @@
         },
         {
             "type": "io",
-            "physical_start": "0x10010000",
-            "virtual_start": "0x10010000",
+            "physical_start": "0x100d0000",
+            "virtual_start": "0x100d0000",
             "size": "0x1000"
         },
         {
@@ -64,7 +70,7 @@
             "type": "io",
             "physical_start": "0x18408000",
             "virtual_start": "0x18408000",
-            "size": "0x8000"
+            "size": "0x00008000"
         },
         {
             "type": "io",
@@ -74,21 +80,34 @@
         },
         {
             "type": "io",
-            "physical_start": "0x10080000",
-            "virtual_start": "0x10080000",
-            "size": "0x1000"
+            "physical_start": "0x10010000",
+            "virtual_start": "0x10010000",
+            "size": "0x00010000"
+        },
+        {
+            "type": "ram",
+            "physical_start": "0x1000",
+            "virtual_start": "0x0",
+            "size": "0x10000"
+        },
+        {
+            "type": "ram",
+            "physical_start": "0xf0000",
+            "virtual_start": "0xf0000",
+            "size": "0x10000"
         }
     ],
     "interrupts": [
-        4, 5
+        4,
+        5
     ],
     "ivc_configs": [],
     "kernel_args": "NOT_USED_YET",
-    "kernel_filepath": "/tool/vmlinux.bin",
+    "kernel_filepath": "/tool/nonroot/vmlinux-linux2.bin",
     "dtb_filepath": "/tool/test.bin",
-    "kernel_load_paddr": "0xc0200000",
-    "dtb_load_paddr": "0xc0000000",
-    "entry_point": "0x90000000c0e4c000",
+    "kernel_load_paddr": "0xa0200000",
+    "dtb_load_paddr": "0xa0000000",
+    "entry_point": "0x90000000a0e8c000",
     "arch_config": {
         "dummy": "0x1234"
     },

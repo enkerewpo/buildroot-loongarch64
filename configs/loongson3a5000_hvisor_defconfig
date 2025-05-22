@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Buildroot -gac06ebe3 Configuration
+# Buildroot -g28180df4-dirty Configuration
 #
 BR2_HAVE_DOT_CONFIG=y
 BR2_HOST_GCC_AT_LEAST_4_9=y
@@ -592,7 +592,6 @@ BR2_PACKAGE_IOZONE=y
 #
 # ktap needs a Linux kernel to be built
 #
-# BR2_PACKAGE_KYUA is not set
 
 #
 # latencytop needs a toolchain w/ wchar, threads
@@ -626,7 +625,7 @@ BR2_PACKAGE_MEMSTAT=y
 # BR2_PACKAGE_PV is not set
 # BR2_PACKAGE_RAMSMP is not set
 # BR2_PACKAGE_RAMSPEED is not set
-BR2_PACKAGE_RT_TESTS=y
+# BR2_PACKAGE_RT_TESTS is not set
 # BR2_PACKAGE_SPIDEV_TEST is not set
 # BR2_PACKAGE_STRACE is not set
 # BR2_PACKAGE_STRESS is not set
@@ -954,32 +953,7 @@ BR2_PACKAGE_NETSURF_ARCH_SUPPORTS=y
 # psplash needs a toolchain w/ wchar
 #
 # BR2_PACKAGE_SDL is not set
-BR2_PACKAGE_SDL2=y
-
-#
-# DirectFB video driver needs directfb
-#
-
-#
-# X11 video driver needs X.org
-#
-
-#
-# KMS/DRM video driver needs libdrm
-#
-
-#
-# OpenGL support needs X11 and an OpenGL provider
-#
-
-#
-# OpenGL ES support needs an OpenGL ES provider
-#
-# BR2_PACKAGE_SDL2_GFX is not set
-# BR2_PACKAGE_SDL2_IMAGE is not set
-# BR2_PACKAGE_SDL2_MIXER is not set
-# BR2_PACKAGE_SDL2_NET is not set
-# BR2_PACKAGE_SDL2_TTF is not set
+# BR2_PACKAGE_SDL2 is not set
 
 #
 # Other GUIs
@@ -989,7 +963,10 @@ BR2_PACKAGE_SDL2=y
 # Qt5 needs host g++ >= 5.0, and a toolchain w/ gcc >= 5.0, wchar, NPTL, C++, dynamic library
 #
 # BR2_PACKAGE_MINIGUI5 is not set
-# BR2_PACKAGE_TEKUI is not set
+
+#
+# tekui needs a Lua interpreter and a toolchain w/ threads, dynamic library
+#
 
 #
 # weston needs udev and a toolchain w/ locale, threads, dynamic library, headers >= 3.0
@@ -1158,7 +1135,7 @@ BR2_PACKAGE_MEMTOOL=y
 # neard needs a toolchain w/ wchar, threads, dynamic library
 #
 # BR2_PACKAGE_NVIDIA_MODPROBE is not set
-# BR2_PACKAGE_NVME is not set
+BR2_PACKAGE_NVME=y
 
 #
 # ofono needs a toolchain w/ dynamic library, wchar, threads, headers >= 4.12
@@ -1171,7 +1148,7 @@ BR2_PACKAGE_MEMTOOL=y
 #
 # parted needs a toolchain w/ locale, wchar
 #
-# BR2_PACKAGE_PCIUTILS is not set
+BR2_PACKAGE_PCIUTILS=y
 # BR2_PACKAGE_PDBG is not set
 # BR2_PACKAGE_PICOCOM is not set
 
@@ -1183,7 +1160,7 @@ BR2_PACKAGE_MEMTOOL=y
 # BR2_PACKAGE_READ_EDID is not set
 # BR2_PACKAGE_RNG_TOOLS is not set
 # BR2_PACKAGE_RS485CONF is not set
-# BR2_PACKAGE_RTC_TOOLS is not set
+BR2_PACKAGE_RTC_TOOLS=y
 
 #
 # rtl8188eu needs a Linux kernel to be built
@@ -1297,131 +1274,9 @@ BR2_PACKAGE_HOST_ERLANG_ARCH_SUPPORTS=y
 #
 # BR2_PACKAGE_HASERL is not set
 # BR2_PACKAGE_JIMTCL is not set
-BR2_PACKAGE_LUA=y
-BR2_PACKAGE_PROVIDES_LUAINTERPRETER="lua"
-# BR2_PACKAGE_LUA_5_1 is not set
-BR2_PACKAGE_LUA_5_3=y
-# BR2_PACKAGE_LUA_5_4 is not set
-# BR2_PACKAGE_LUA_32BITS is not set
-BR2_PACKAGE_LUA_EDITING_NONE=y
-# BR2_PACKAGE_LUA_READLINE is not set
-# BR2_PACKAGE_LUA_LINENOISE is not set
-BR2_PACKAGE_HAS_LUAINTERPRETER=y
-BR2_PACKAGE_LUAINTERPRETER_ABI_VERSION="5.3"
-BR2_PACKAGE_LUAINTERPRETER_ABI_VERSION_5_3=y
+# BR2_PACKAGE_LUA is not set
 BR2_PACKAGE_PROVIDES_HOST_LUAINTERPRETER="host-lua"
-
-#
-# Lua libraries/modules
-#
-# BR2_PACKAGE_ARGPARSE is not set
-# BR2_PACKAGE_CGILUA is not set
-# BR2_PACKAGE_COPAS is not set
-# BR2_PACKAGE_COXPCALL is not set
-# BR2_PACKAGE_DADO is not set
-
-#
-# easydbus needs a toolchain w/ wchar, threads, Lua <= 5.3
-#
-# BR2_PACKAGE_LBASE64 is not set
-
-#
-# ljlinenoise needs LuaJIT
-#
-
-#
-# ljsyscall needs LuaJIT
-#
-# BR2_PACKAGE_LPEG is not set
-# BR2_PACKAGE_LPTY is not set
-# BR2_PACKAGE_LRANDOM is not set
-# BR2_PACKAGE_LSQLITE3 is not set
-# BR2_PACKAGE_LUA_BASEXX is not set
-# BR2_PACKAGE_LUA_BINARYHEAP is not set
-# BR2_PACKAGE_LUA_BIT32 is not set
-# BR2_PACKAGE_LUA_CJSON is not set
-# BR2_PACKAGE_LUA_COAT is not set
-
-#
-# lua-coatpersistent needs lsqlite3 or luasql-sqlite3
-#
-# BR2_PACKAGE_LUA_CODEGEN is not set
-# BR2_PACKAGE_LUA_CQUEUES is not set
-# BR2_PACKAGE_LUA_CSNAPPY is not set
-# BR2_PACKAGE_LUA_CURL is not set
-# BR2_PACKAGE_LUA_DATAFILE is not set
-# BR2_PACKAGE_LUA_EV is not set
-# BR2_PACKAGE_LUA_FIFO is not set
-# BR2_PACKAGE_LUA_FLU is not set
-# BR2_PACKAGE_LUA_GD is not set
-# BR2_PACKAGE_LUA_HTTP is not set
-# BR2_PACKAGE_LUA_ICONV is not set
-# BR2_PACKAGE_LUA_LIVR is not set
-# BR2_PACKAGE_LUA_LIVR_EXTRA is not set
-# BR2_PACKAGE_LUA_LPEG_PATTERNS is not set
-# BR2_PACKAGE_LUA_LUNITX is not set
-# BR2_PACKAGE_LUA_LYAML is not set
-# BR2_PACKAGE_LUA_MARKDOWN is not set
-# BR2_PACKAGE_LUA_MESSAGEPACK is not set
-
-#
-# lua-msgpack-native needs Lua 5.1 or LuaJIT
-#
-# BR2_PACKAGE_LUA_PERIPHERY is not set
-# BR2_PACKAGE_LUA_RESTY_HTTP is not set
-# BR2_PACKAGE_LUA_ROTAS is not set
-# BR2_PACKAGE_LUA_SAILOR is not set
-# BR2_PACKAGE_LUA_SDL2 is not set
-# BR2_PACKAGE_LUA_SILVA is not set
-# BR2_PACKAGE_LUA_STD_DEBUG is not set
-# BR2_PACKAGE_LUA_STD_NORMALIZE is not set
-# BR2_PACKAGE_LUA_STDLIB is not set
-# BR2_PACKAGE_LUA_TESTMORE is not set
-# BR2_PACKAGE_LUA_UTF8 is not set
-# BR2_PACKAGE_LUA_VALUA is not set
-
-#
-# luabitop needs Lua 5.1
-#
-# BR2_PACKAGE_LUADBI is not set
-# BR2_PACKAGE_LUADBI_SQLITE3 is not set
-# BR2_PACKAGE_LUAEXPAT is not set
-# BR2_PACKAGE_LUAEXPATUTILS is not set
-# BR2_PACKAGE_LUAFILESYSTEM is not set
-# BR2_PACKAGE_LUAJSON is not set
-
-#
-# lualdap needs a toolchain w/ wchar, dynamic library, Lua <= 5.3
-#
-# BR2_PACKAGE_LUALOGGING is not set
-# BR2_PACKAGE_LUAOSSL is not set
-# BR2_PACKAGE_LUAPOSIX is not set
-# BR2_PACKAGE_LUASEC is not set
-# BR2_PACKAGE_LUASOCKET is not set
-# BR2_PACKAGE_LUASQL_SQLITE3 is not set
-# BR2_PACKAGE_LUASYSLOG is not set
-# BR2_PACKAGE_LUTOK is not set
-# BR2_PACKAGE_LUV is not set
-
-#
-# luvi needs LuaJIT
-#
-# BR2_PACKAGE_LZLIB is not set
-
-#
-# orbit needs a Lua 5.1 interpreter
-#
-# BR2_PACKAGE_RINGS is not set
-
-#
-# turbolua needs LuaJIT
-#
-# BR2_PACKAGE_WSAPI is not set
-# BR2_PACKAGE_WSAPI_FCGI is not set
-# BR2_PACKAGE_WSAPI_XAVANTE is not set
-# BR2_PACKAGE_XAVANTE is not set
-BR2_PACKAGE_MICROPYTHON=y
-BR2_PACKAGE_MICROPYTHON_LIB=y
+# BR2_PACKAGE_MICROPYTHON is not set
 BR2_PACKAGE_HOST_MONO_ARCH_SUPPORTS=y
 BR2_PACKAGE_HOST_OPENJDK_BIN_ARCH_SUPPORTS=y
 # BR2_PACKAGE_PERL is not set
@@ -2854,7 +2709,10 @@ BR2_PACKAGE_HAPROXY_ARCH_SUPPORTS=y
 # BR2_PACKAGE_PPTP_LINUX is not set
 # BR2_PACKAGE_PRIVOXY is not set
 # BR2_PACKAGE_PROFTPD is not set
-# BR2_PACKAGE_PROSODY is not set
+
+#
+# prosody needs the lua interpreter, dynamic library
+#
 # BR2_PACKAGE_PROXYCHAINS_NG is not set
 # BR2_PACKAGE_PTPD is not set
 # BR2_PACKAGE_PTPD2 is not set
@@ -3087,7 +2945,7 @@ BR2_PACKAGE_BASH=y
 # Utilities
 #
 # BR2_PACKAGE_AT is not set
-# BR2_PACKAGE_BASH_COMPLETION is not set
+BR2_PACKAGE_BASH_COMPLETION=y
 # BR2_PACKAGE_CCRYPT is not set
 # BR2_PACKAGE_DIALOG is not set
 # BR2_PACKAGE_DTACH is not set
@@ -3114,7 +2972,7 @@ BR2_PACKAGE_NEOFETCH=y
 BR2_PACKAGE_SCREEN=y
 # BR2_PACKAGE_SCREENFETCH is not set
 BR2_PACKAGE_SUDO=y
-# BR2_PACKAGE_TIME is not set
+BR2_PACKAGE_TIME=y
 # BR2_PACKAGE_TINI is not set
 
 #
@@ -3355,7 +3213,7 @@ BR2_PACKAGE_ED=y
 #
 # mc needs a toolchain w/ threads, wchar
 #
-# BR2_PACKAGE_MG is not set
+BR2_PACKAGE_MG=y
 # BR2_PACKAGE_MOST is not set
 
 #
@@ -3400,7 +3258,25 @@ BR2_TARGET_ROOTFS_CPIO_GZIP=y
 # BR2_TARGET_ROOTFS_CPIO_UIMAGE is not set
 # BR2_TARGET_ROOTFS_CRAMFS is not set
 # BR2_TARGET_ROOTFS_EROFS is not set
-# BR2_TARGET_ROOTFS_EXT2 is not set
+BR2_TARGET_ROOTFS_EXT2=y
+# BR2_TARGET_ROOTFS_EXT2_2r0 is not set
+# BR2_TARGET_ROOTFS_EXT2_2r1 is not set
+# BR2_TARGET_ROOTFS_EXT2_3 is not set
+BR2_TARGET_ROOTFS_EXT2_4=y
+BR2_TARGET_ROOTFS_EXT2_GEN=4
+BR2_TARGET_ROOTFS_EXT2_REV=1
+BR2_TARGET_ROOTFS_EXT2_LABEL="rootfs"
+BR2_TARGET_ROOTFS_EXT2_SIZE="1024M"
+BR2_TARGET_ROOTFS_EXT2_INODES=0
+BR2_TARGET_ROOTFS_EXT2_RESBLKS=5
+BR2_TARGET_ROOTFS_EXT2_MKFS_OPTIONS="-O ^64bit"
+BR2_TARGET_ROOTFS_EXT2_NONE=y
+# BR2_TARGET_ROOTFS_EXT2_GZIP is not set
+# BR2_TARGET_ROOTFS_EXT2_BZIP2 is not set
+# BR2_TARGET_ROOTFS_EXT2_LZ4 is not set
+# BR2_TARGET_ROOTFS_EXT2_LZMA is not set
+# BR2_TARGET_ROOTFS_EXT2_LZO is not set
+# BR2_TARGET_ROOTFS_EXT2_XZ is not set
 # BR2_TARGET_ROOTFS_F2FS is not set
 
 #
