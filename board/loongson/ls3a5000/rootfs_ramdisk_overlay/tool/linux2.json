@@ -124,8 +124,8 @@
         "mem64_size": "0x20000000",
         "pci_mem64_base": "0x60000000"
     },
-    "num_pci_devs": 4,
-    "alloc_pci_devs": [0, 8, 16, 32]
+    "num_pci_devs": 1,
+    "alloc_pci_devs": [2050]
 }
 
 
