@@ -68,13 +68,13 @@
             "id": 3,
             "memory_region": [
                 {
-                    "zone0_ipa": "0x60000000",
-                    "zonex_ipa": "0x60000000",
+                    "zone0_ipa": "0x100000000",
+                    "zonex_ipa": "0x100000000",
                     "size": "0x10000000"
                 },
                 {
-                    "zone0_ipa": "0x70000000",
-                    "zonex_ipa": "0x70000000",
+                    "zone0_ipa": "0x110000000",
+                    "zonex_ipa": "0x110000000",
                     "size": "0x10000000"
                 }
             ],
