@@ -72,7 +72,10 @@ check_hvisor() {
         log "warn" "hvisor not installed, installing..."
         install_hvisor "$TOOL_DIR"
     fi
+    return 0
 }
+
+check_hvisor
 
 # Start virtio backend
 start_virtio_backend() {

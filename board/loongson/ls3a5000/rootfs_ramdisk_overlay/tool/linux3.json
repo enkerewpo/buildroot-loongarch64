@@ -89,7 +89,7 @@
     "dtb_filepath": "/tool/test.bin",
     "kernel_load_paddr": "0x100200000",
     "dtb_load_paddr": "0x100000000",
-    "entry_point": "0x9000000100dfe000",
+    "entry_point": "0x9000000100dff000",
     "arch_config": {
         "dummy": "0x1234"
     },
@@ -107,5 +107,5 @@
         "pci_mem64_base": "0x60000000"
     },
     "num_pci_devs": 1,
-    "alloc_pci_devs": [2051]
+    "alloc_pci_devs": [1539]
 }

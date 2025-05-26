@@ -1,0 +1,18 @@
+linux1
+"alloc_pci_devs": [2049], 2049 = 0x801, bus8, dev0, func1
+
+linux2
+"alloc_pci_devs": [2050], 2050 = 0x802, bus8, dev0, func2
+
+linux3
+"alloc_pci_devs": [2051], 2051 = 0x803, bus8, dev0, func3
+
+
+linux1
+"alloc_pci_devs": [1537], 1537 = 0x601, bus6, dev0, func1
+
+linux2
+"alloc_pci_devs": [1538], 1538 = 0x602, bus6, dev0, func2
+
+linux3
+"alloc_pci_devs": [1539], 1539 = 0x603, bus6, dev0, func3
