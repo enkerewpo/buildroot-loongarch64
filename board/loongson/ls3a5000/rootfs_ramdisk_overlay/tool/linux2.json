@@ -74,9 +74,9 @@
         },
         {
             "type": "ram",
-            "physical_start": "0x140000000",
-            "virtual_start": "0x140000000",
-            "size": "0x10000000"
+            "physical_start": "0x140800000",
+            "virtual_start": "0x140800000",
+            "size": "0x800000"
         }
     ],
     "interrupts": [
@@ -109,6 +109,3 @@
     "num_pci_devs": 1,
     "alloc_pci_devs": [1538]
 }
-
-
-

@@ -76,7 +76,19 @@
             "type": "ram",
             "physical_start": "0x140000000",
             "virtual_start": "0x140000000",
-            "size": "0x10000000"
+            "size": "0x800000"
+        },
+        {
+            "type": "ram",
+            "physical_start": "0x140800000",
+            "virtual_start": "0x140800000",
+            "size": "0x800000"
+        },
+        {
+            "type": "ram",
+            "physical_start": "0x141000000",
+            "virtual_start": "0x141000000",
+            "size": "0x800000"
         }
     ],
     "interrupts": [

@@ -31,7 +31,7 @@ fi
 mkdir -p /dev/pts
 mount -t devpts devpts /dev/pts
 
-cp -r libdrm-install/lib/* /lib64/
+# cp -r libdrm-install/lib/* /lib64/
 
 echo "Starting hvisor with configuration: $CONFIG_FILE"
 nohup hvisor virtio start "$CONFIG_FILE" &
