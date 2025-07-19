@@ -89,7 +89,7 @@
     "dtb_filepath": "/tool/test.bin",
     "kernel_load_paddr": "0x100200000",
     "dtb_load_paddr": "0x100000000",
-    "entry_point": "0x9000000100e07000",
+    "entry_point": "0x9000000100e08000",
     "arch_config": {
         "dummy": "0x1234"
     },
