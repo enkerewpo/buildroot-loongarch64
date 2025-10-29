@@ -25,6 +25,12 @@
             "size": "0x1000"
         },
         {
+            "type": "io",
+            "physical_start": "0x10080000",
+            "virtual_start": "0x10080000",
+            "size": "0x1000"
+        },
+        {
             "type": "virtio",
             "physical_start": "0x30001000",
             "virtual_start": "0x30001000",
